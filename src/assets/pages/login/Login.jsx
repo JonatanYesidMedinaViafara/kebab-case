@@ -3,6 +3,7 @@ import { useCallback, useEffect } from "react";
 import useAuthStore from "../../../stores/use-auth-store";
 import UserDAO from "../../daos/UserDAO";
 import { useNavigate } from "react-router-dom";
+import Header from "../../../components/Header/Header";
 
 export default function Login() {
     const { user, loginGoogleWithPopUp, observeAuthState, logout } = useAuthStore();
@@ -33,14 +34,15 @@ export default function Login() {
                 photo: user.photoURL,
             };
             UserDAO.createUser(newUser);
-            navigate("/Home");
+            navigate("/login");
         }
     }, [user, navigate]);
 
     return (
         <div className="container-login">
             {user ? (
-                <>
+                <>  
+                    <Header />
                     <p className="welcome-text">Bienvenido, {user.displayName}</p>
                     <button className="button-logout" onClick={handleLogout}>
                         Cerrar sesión

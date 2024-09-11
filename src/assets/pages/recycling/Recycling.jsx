@@ -8,7 +8,7 @@ const RecyCling = () => {
   return (
     <>
       <Header />
-      <div className="container">
+      <div className="container-3d">
         <Canvas>
           <OrbitControls 
             autoRotate = {true}

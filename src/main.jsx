@@ -10,14 +10,14 @@ import Page404 from "./assets/pages/page-404/Page404.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
   {
     path: "/Quiz",
     element: <Quiz />,
   },
-  { path: "/", element: <Home /> },
+  { path: "/home", element: <Home /> },
   { path: "/recycling", element: <RecyCling /> },
   { path: "*", element: <Page404 /> },
 ]);
