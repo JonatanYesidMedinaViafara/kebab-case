@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <Header />
       <div className="container">
-        <h1>Bienvenidos a El Estado de Nuestra Tierra</h1>
+        <h1>Bienvenidos a El Estado de   Tierra</h1>
         <p>
           La Tierra, nuestro hogar compartido, está enfrentando múltiples desafíos ambientales 
           que afectan la vida tal como la conocemos. Entre estos, la deforestación, la erosión 
