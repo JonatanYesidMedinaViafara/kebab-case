@@ -1,6 +1,6 @@
 header {
   padding: 1rem;
-  background-color: #217c61;
+  background-color: #674636;
 }
 
 nav ul {
@@ -19,7 +19,7 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-size: large;
 }

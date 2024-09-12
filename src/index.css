@@ -1,13 +1,9 @@
-button {
+body {
     padding: 10px 20px;
     font-size: medium;
     color: #fff;
-    background-color: #4e9201;
+    background-color: #AAB396;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
 }

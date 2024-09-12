@@ -14,9 +14,9 @@ const Quiz = () => {
         <>
             <Header />
             <div className="quiz-container">
-                <h1 className="quiz-header">Hola</h1>
+                <h1 className="quiz-header">A poner a prueba tus conocimientos</h1>
                 <p className="quiz-progress">Progreso del Quiz: {quiz.percentageQuizCompleted}%</p>
-                <button onClick={onHandleButtonNext}>Siguiente</button>
+                <button className="next" onClick={onHandleButtonNext}>Siguiente</button>
             </div>
         </>
     );

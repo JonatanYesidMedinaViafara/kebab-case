@@ -14,7 +14,7 @@ const RecyCling = () => {
             autoRotate = {true}
           />
           <ambientLight/>
-          <directionalLight position={[10, 10, 10]} intensity={5}/>
+          <directionalLight position={[100, 100, 100]} intensity={5}/>
           <TrashCan/>
         </Canvas>
       </div>

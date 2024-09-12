@@ -1,25 +1,16 @@
 import { useGLTF } from "@react-three/drei";
 
-
-
-const TrashCan = (props) =>{
-    const {nodes,materials} = useGLTF("modelo3D/trash-can.glb")
+const TrashCan = (props) => {
+    const { nodes, materials } = useGLTF("modelo3D/earth.glb")
     return (
         <group {...props} dispose={null}>
             <group name="Scene">
-            <mesh
-                name="Tong_Sampah"
-                geometry={nodes.Tong_Sampah.geometry}
-                material={materials.Texture}
-            />
-            <mesh rotation-x={Math.PI *0.5}>
-                <boxGeometry args={[2,2,0.1]}/>
-                <meshStandardMaterial color="gray"/>
-            </mesh>
+                <mesh name="LEAVES" geometry={nodes.LEAVES.geometry} material={materials.PLANE_BRUNCH} />
+                <mesh name="SAKURA_TREE" geometry={nodes.SAKURA_TREE.geometry} material={materials.TREE} />
             </group>
         </group>
     )
 }
 
 export default TrashCan;
-useGLTF.preload("modelo3D/trash-can.glb")
+useGLTF.preload("modelo3D/earth.glb")
