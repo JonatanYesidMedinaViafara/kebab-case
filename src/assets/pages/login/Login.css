@@ -1,223 +1,231 @@
 /* Texto de bienvenida */
 .welcome-text {
-    font-size: 1.8rem;
-    color: #3b3b3b;
-    /* Gris oscuro para una lectura clara */
-    text-align: center;
-    margin: 40px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    /* Separación entre letras para elegancia */
+    font-size: 1.8rem; /* Tamaño de fuente grande para el texto de bienvenida */
+    color: #3b3b3b; /* Color gris oscuro para una buena lectura */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 40px; /* Margen alrededor del texto */
+    font-weight: bold; /* Hace que el texto sea negrita */
+    letter-spacing: 1px; /* Espacio entre letras para un efecto elegante */
 }
 
+/* Texto de presentación */
 .present-text {
-    font-size: 1.5rem;
-    color: #000000;
-    /* Gris oscuro para una lectura clara */
-    text-align: justify;
-    margin: 40px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    /* Separación entre letras para elegancia */
+    font-size: 1.5rem; /* Tamaño de fuente un poco más pequeño que el de bienvenida */
+    color: #000000; /* Color negro para una buena lectura */
+    text-align: justify; /* Justifica el texto para un alineamiento uniforme */
+    margin: 40px; /* Margen alrededor del texto */
+    font-weight: bold; /* Hace que el texto sea negrita */
+    letter-spacing: 1px; /* Espacio entre letras para un efecto elegante */
 }
 
-
-/**/
+/* Estilos del botón de cierre de sesión */
 .button-logout {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition-duration: 0.3s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: RGB(29, 185, 84);
+    display: flex; /* Usar flexbox para alinear elementos internos */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: flex-start; /* Alinea los elementos al inicio horizontalmente */
+    width: 45px; /* Ancho del botón */
+    height: 45px; /* Altura del botón */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Bordes redondeados para un botón circular */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    position: relative; /* Posiciona el botón relativo a su posición original */
+    overflow: hidden; /* Oculta cualquier contenido que desborde */
+    transition-duration: 0.3s; /* Duración de la transición para efectos suaves */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199); /* Sombra alrededor del botón */
+    background-color: RGB(29, 185, 84); /* Color de fondo verde para el botón */
 }
 
-/* plus sign */
+/* Estilos del ícono dentro del botón */
 .sign {
-    width: 100%;
-    transition-duration: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%; /* Ancho completo del contenedor del ícono */
+    transition-duration: 0.3s; /* Duración de la transición para efectos suaves */
+    display: flex; /* Usar flexbox para alinear elementos internos */
+    align-items: center; /* Centra el ícono verticalmente */
+    justify-content: center; /* Centra el ícono horizontalmente */
 }
 
+/* Tamaño del SVG del ícono */
 .sign svg {
-    width: 18px;
+    width: 18px; /* Ancho del SVG */
 }
 
+/* Color del camino dentro del SVG */
 .sign svg path {
-    fill: black;
+    fill: black; /* Color negro para el ícono */
 }
 
-/* text */
+/* Estilos del texto en el botón */
 .text {
-    position: absolute;
-    right: 0%;
-    width: 0%;
-    opacity: 0;
-    color: black;
-    font-size: 1.2em;
-    font-weight: 600;
-    transition-duration: 0.3s;
+    position: absolute; /* Posiciona el texto de forma absoluta */
+    right: 0%; /* Alinea el texto a la derecha */
+    width: 0%; /* Ancho inicial del texto, oculto al inicio */
+    opacity: 0; /* Inicialmente invisible */
+    color: black; /* Color negro para el texto */
+    font-size: 1.2em; /* Tamaño del texto */
+    font-weight: 600; /* Grosor del texto */
+    transition-duration: 0.3s; /* Duración de la transición para efectos suaves */
 }
 
-/* hover effect on button width */
+/* Efecto al pasar el ratón sobre el botón */
 .button-logout:hover {
-    width: 125px;
-    border-radius: 40px;
-    transition-duration: 0.3s;
+    width: 125px; /* Aumenta el ancho del botón al pasar el ratón */
+    border-radius: 40px; /* Bordes redondeados al pasar el ratón */
+    transition-duration: 0.3s; /* Duración de la transición */
 }
 
+/* Efecto al pasar el ratón sobre el ícono */
 .button-logout:hover .sign {
-    width: 30%;
-    transition-duration: 0.3s;
-    padding-left: 20px;
+    width: 30%; /* Cambia el ancho del ícono al pasar el ratón */
+    transition-duration: 0.3s; /* Duración de la transición */
+    padding-left: 20px; /* Añade padding a la izquierda al pasar el ratón */
 }
 
-/* hover effect button's text */
+/* Efecto al pasar el ratón sobre el texto */
 .button-logout:hover .text {
-    opacity: 1;
-    width: 70%;
-    transition-duration: 0.3s;
-    padding-right: 10px;
+    opacity: 1; /* Hace visible el texto al pasar el ratón */
+    width: 70%; /* Aumenta el ancho del texto al pasar el ratón */
+    transition-duration: 0.3s; /* Duración de la transición */
+    padding-right: 10px; /* Añade padding a la derecha al pasar el ratón */
 }
 
-/* button click effect*/
+/* Efecto al hacer clic en el botón */
 .button-logout:active {
-    transform: translate(2px, 2px);
+    transform: translate(2px, 2px); /* Desplaza el botón ligeramente al hacer clic */
 }
 
-/**/
-
+/* Estilos del formulario */
 .form {
-    margin: auto;
-    position: center;
-    margin-top: 10%;
-    height: fit-content;
-    width: fit-content;
-    --background: #d3d3d3;
-    --input-focus: #2d8cf0;
-    --font-color: #323232;
-    --font-color-sub: #666;
-    --bg-color: #fff;
-    --main-color: #202020;
-    padding: 20px;
-    background: var(--background);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
+    margin: auto; /* Centra el formulario horizontalmente */
+    position: center; /* Posiciona el formulario en el centro */
+    margin-top: 10%; /* Margen superior para separación */
+    height: fit-content; /* Ajusta la altura al contenido */
+    width: fit-content; /* Ajusta el ancho al contenido */
+    --background: #d3d3d3; /* Color de fondo definido como gris claro */
+    --input-focus: #2d8cf0; /* Color de fondo al enfocar los inputs */
+    --font-color: #323232; /* Color del texto principal */
+    --font-color-sub: #666; /* Color del texto secundario */
+    --bg-color: #fff; /* Color de fondo blanco */
+    --main-color: #202020; /* Color principal para bordes */
+    padding: 20px; /* Padding interno del formulario */
+    background: var(--background); /* Usa el color de fondo definido */
+    display: flex; /* Usar flexbox para alinear elementos internos */
+    flex-direction: column; /* Disponer elementos en columna */
+    align-items: flex-start; /* Alinear elementos al inicio horizontalmente */
+    justify-content: center; /* Centrar elementos verticalmente */
+    gap: 20px; /* Espacio entre elementos */
+    border-radius: 5px; /* Bordes redondeados para el formulario */
+    border: 2px solid var(--main-color); /* Borde de 2px del color principal */
+    box-shadow: 4px 4px var(--main-color); /* Sombra alrededor del formulario */
 }
 
+/* Estilos para los párrafos dentro del formulario */
 .form>p {
-    font-family: var(--font-DelaGothicOne);
-    color: var(--font-color);
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
+    font-family: var(--font-DelaGothicOne); /* Fuente específica para el texto */
+    color: var(--font-color); /* Color del texto */
+    font-weight: 700; /* Grosor del texto */
+    font-size: 20px; /* Tamaño del texto */
+    margin-bottom: 15px; /* Margen inferior para separación */
+    display: flex; /* Usar flexbox para alinear elementos internos */
+    flex-direction: column; /* Disponer elementos en columna */
 }
 
+/* Estilos para los spans dentro de los párrafos */
 .form>p>span {
-    font-family: var(--font-SpaceMono);
-    color: var(--font-color-sub);
-    font-weight: 600;
-    font-size: 17px;
+    font-family: var(--font-SpaceMono); /* Fuente específica para el texto secundario */
+    color: var(--font-color-sub); /* Color del texto secundario */
+    font-weight: 600; /* Grosor del texto secundario */
+    font-size: 17px; /* Tamaño del texto secundario */
 }
 
+/* Separador visual */
 .separator {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    width: 100%; /* Ancho completo del separador */
+    display: flex; /* Usar flexbox para alinear elementos internos */
+    align-items: center; /* Centra verticalmente los elementos dentro del separador */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del separador */
+    gap: 5px; /* Espacio entre los elementos del separador */
 }
 
+/* Estilos para los elementos dentro del separador */
 .separator>div {
-    width: 100px;
-    height: 3px;
-    border-radius: 5px;
-    background-color: var(--font-color-sub);
+    width: 100px; /* Ancho del separador */
+    height: 3px; /* Altura del separador */
+    border-radius: 5px; /* Bordes redondeados para el separador */
+    background-color: var(--font-color-sub); /* Color del separador usando la variable secundaria */
 }
 
+/* Estilos para el texto dentro del separador */
 .separator>span {
-    color: var(--font-color);
-    font-family: var(--font-SpaceMono);
-    font-weight: 600;
+    color: var(--font-color); /* Color del texto en el separador */
+    font-family: var(--font-SpaceMono); /* Fuente específica para el texto del separador */
+    font-weight: 600; /* Grosor del texto en el separador */
 }
 
+/* Estilos para los botones de OAuth */
 .oauthButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    /* margin: 50px auto 0 auto; */
-    padding: auto 15px 15px auto;
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--font-color);
-    cursor: pointer;
-    transition: all 250ms;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    display: flex; /* Usar flexbox para alinear elementos internos */
+    justify-content: center; /* Centra horizontalmente el contenido del botón */
+    align-items: center; /* Centra verticalmente el contenido del botón */
+    gap: 5px; /* Espacio entre el ícono y el texto en el botón */
+    padding: auto 15px 15px auto; /* Padding interno del botón */
+    width: 250px; /* Ancho del botón */
+    height: 40px; /* Altura del botón */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    border: 2px solid var(--main-color); /* Borde del botón usando el color principal */
+    background-color: var(--bg-color); /* Color de fondo blanco para el botón */
+    box-shadow: 4px 4px var(--main-color); /* Sombra alrededor del botón */
+    font-size: 16px; /* Tamaño del texto en el botón */
+    font-weight: 600; /* Grosor del texto en el botón */
+    color: var(--font-color); /* Color del texto en el botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+    transition: all 250ms; /* Transición suave para todos los efectos en el botón */
+    position: relative; /* Posiciona el botón relativo a su posición original */
+    overflow: hidden; /* Oculta cualquier contenido que desborde */
+    z-index: 1; /* Asegura que el botón esté por encima de otros elementos */
 }
 
+/* Efecto de fondo en el botón de OAuth */
 .oauthButton::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background-color: #000000;
-    z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    transition: all 250ms;
+    content: ""; /* Crea un pseudo-elemento vacío */
+    position: absolute; /* Posiciona el pseudo-elemento de forma absoluta */
+    top: 0; /* Alinea el pseudo-elemento al borde superior */
+    left: 0; /* Alinea el pseudo-elemento al borde izquierdo */
+    height: 100%; /* Altura completa del botón */
+    width: 0; /* Ancho inicial del pseudo-elemento, oculto al inicio */
+    background-color: #000000; /* Color de fondo negro para el pseudo-elemento */
+    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del botón */
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27); /* Sombra para navegadores WebKit */
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27); /* Sombra alrededor del pseudo-elemento */
+    transition: all 250ms; /* Transición suave para todos los efectos del pseudo-elemento */
 }
 
+/* Efecto al pasar el ratón sobre el botón de OAuth */
 .oauthButton:hover {
-    color: #e8e8e8;
+    color: #e8e8e8; /* Cambia el color del texto al pasar el ratón */
 }
 
+/* Efecto al pasar el ratón sobre el fondo del botón de OAuth */
 .oauthButton:hover::before {
-    width: 100%;
+    width: 100%; /* Expande el ancho del pseudo-elemento al pasar el ratón */
 }
 
+/* Estilos para los inputs dentro del formulario */
 .form>input {
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--font-color);
-    padding: 5px 10px;
-    outline: none;
+    width: 250px; /* Ancho del input */
+    height: 40px; /* Altura del input */
+    border-radius: 5px; /* Bordes redondeados para el input */
+    border: 2px solid var(--main-color); /* Borde del input usando el color principal */
+    background-color: var(--bg-color); /* Color de fondo blanco para el input */
+    box-shadow: 4px 4px var(--main-color); /* Sombra alrededor del input */
+    font-size: 15px; /* Tamaño del texto en el input */
+    font-weight: 600; /* Grosor del texto en el input */
+    color: var(--font-color); /* Color del texto en el input */
+    padding: 5px 10px; /* Padding interno del input */
+    outline: none; /* Sin borde al enfocar */
 }
 
+/* Estilos para los íconos */
 .icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.5rem; /* Ancho del ícono */
+    height: 1.5rem; /* Altura del ícono */
 }

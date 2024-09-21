@@ -1,24 +1,37 @@
-import Header from "../../../components/Header/Header";
-import TrashCan from "./models-3D/TrashCan";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import "./Recycling.css";
+import Header from "../../../components/Header/Header"; // Importa el componente Header desde la ruta especificada
+import TrashCan from "./models-3D/TrashCan"; // Importa el componente TrashCan que renderiza un modelo 3D
+import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
+import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
+import "./Recycling.css"; // Importa los estilos para el componente desde Recycling.css
 
+// Definición del componente funcional RecyCling
 const RecyCling = () => {
   return (
     <>
+      {/* Renderiza el componente Header en la parte superior */}
       <Header />
+      
+      {/* Contenedor para el modelo 3D con clase 'container-3d' */}
       <div className="container-3d">
-        <Canvas camera={{
-            position: [0, 0, 10], // Posición de la cámara para que todo el modelo sea visible
-            fov: 70, // Ajuste del campo de visión (Field of View)
+        {/* Canvas que actúa como el área para renderizar el contenido 3D */}
+        <Canvas
+          camera={{
+            position: [0, 0, 10], // Posición inicial de la cámara para que el modelo se vea completo
+            fov: 70, // Campo de visión (Field of View) de la cámara, 70 grados
           }}>
           
+          {/* Controles para poder rotar el modelo 3D automáticamente */}
           <OrbitControls
-            autoRotate={true}
+            autoRotate={true} // El modelo rotará automáticamente
           />
+          
+          {/* Luz ambiental que ilumina el modelo de manera uniforme */}
           <ambientLight />
+          
+          {/* Luz direccional que ilumina desde una posición específica con una intensidad alta */}
           <directionalLight position={[10, 10, 10]} intensity={5} />
+          
+          {/* Renderiza el modelo TrashCan, que contiene el modelo 3D */}
           <TrashCan />
         </Canvas>
       </div>
@@ -26,4 +39,4 @@ const RecyCling = () => {
   );
 };
 
-export default RecyCling;
+export default RecyCling; // Exporta el componente RecyCling para ser usado en otras partes de la aplicación
