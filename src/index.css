@@ -1,9 +1,9 @@
 body {
-    padding: 10px 20px;
+    margin-left: 105px;
+    padding: 20px;
     font-size: medium;
     color: #fff;
     background-color: #d5e4b2;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }

@@ -9,13 +9,17 @@ const RecyCling = () => {
     <>
       <Header />
       <div className="container-3d">
-        <Canvas>
-          <OrbitControls 
-            autoRotate = {true}
+        <Canvas camera={{
+            position: [0, 0, 10], // Posición de la cámara para que todo el modelo sea visible
+            fov: 70, // Ajuste del campo de visión (Field of View)
+          }}>
+          
+          <OrbitControls
+            autoRotate={true}
           />
-          <ambientLight/>
-          <directionalLight position={[100, 100, 100]} intensity={5}/>
-          <TrashCan/>
+          <ambientLight />
+          <directionalLight position={[10, 10, 10]} intensity={5} />
+          <TrashCan />
         </Canvas>
       </div>
     </>

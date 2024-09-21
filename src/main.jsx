@@ -9,14 +9,8 @@ import RecyCling from "./assets/pages/recycling/Recycling.jsx";
 import Page404 from "./assets/pages/page-404/Page404.jsx";
 
 const router = createBrowserRouter([
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/Quiz",
-    element: <Quiz />,
-  },
+  { path: "/login",element: <Login />,},
+  { path: "/Quiz", element: <Quiz />,},
   { path: "/home", element: <Home /> },
   { path: "/recycling", element: <RecyCling /> },
   { path: "*", element: <Page404 /> },

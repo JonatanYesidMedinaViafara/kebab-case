@@ -1,17 +1,25 @@
 header {
   padding: 1rem;
   background-color: #674636;
+  position: fixed;
+  height: 100vh;
+  width: 100;
+  top: 0;  /* La barra comienza en la parte superior */
+  left: 0;  /* La barra se posiciona al lado izquierdo de la pantalla */
+  padding-top: 20px;
+  
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 10;
+  margin: 10;
+  flex-direction: column;
 }
 
 nav ul li {
-  margin-right: 2rem;
+  padding: 15px;
 }
 
 nav ul li:last-child {
@@ -19,11 +27,14 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: large;
+  color: white; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */ /* Hace que cada enlace ocupe todo el ancho del ítem */
+  font-size: 18px; /* Tamaño del texto */
+
 }
 
 nav ul li a:hover {
   text-decoration: underline;
+  background-color: #a5d1ac;  /* Cambia el color de fondo cuando se pasa el ratón por encima */
+  transition: 0.3s;
 }
