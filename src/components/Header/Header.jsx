@@ -30,6 +30,10 @@ const Header = () => {
               {/* Link al quiz */}
               <Link to="/quiz">quiz</Link>
             </li>
+            <li>
+              {/* Link a la pagina afsr */}
+              <Link to="/management">Manejo inadecuado de residuos</Link>
+            </li>
           </ul>
         </nav>
       </header>
