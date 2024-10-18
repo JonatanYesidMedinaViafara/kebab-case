@@ -32,7 +32,7 @@ const Header = () => {
             </li>
             <li>
               {/* Link a la pagina afsr */}
-              <Link to="/management">Manejo inadecuado de residuos</Link>
+              <Link to="/management">residuos</Link>
             </li>
           </ul>
         </nav>

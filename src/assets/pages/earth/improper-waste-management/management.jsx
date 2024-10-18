@@ -6,7 +6,7 @@ const Management = () => {
         <>
             <Header />
             <div className="home-erosion">
-                <h1 className="tituloPrincipal">residuos</h1>
+                <h1 className="tituloPrincipal">Manejo inadecuado de residuos</h1>
 
                 <div className="seccion">
                     <h3 className="tituloSeccion">¿Cómo se produce la erosión del suelo?</h3>
