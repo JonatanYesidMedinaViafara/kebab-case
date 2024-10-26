@@ -11,16 +11,15 @@ const Header = () => {
           <ul>
             {/* Cada <li> contiene un enlace a diferentes rutas usando el componente Link */}
             <li>
-              {/* Link a la página de login */}
-              <Link to="/login">login</Link>
-            </li>
-            <li>
               {/* Link a la página de inicio */}
               <Link to="/home">Inicio</Link>
             </li>
-            <li>
-              {/* Link a la página de erosión */}
-              <Link to="/soil-erosion">erosión</Link>
+            <li class="dropdown">
+              <a href="/map" class="dropbtn">Mapa</a>
+                <div class="dropdown-content">
+                    <a href="/soil-erosion">erosión</a>
+                    <a href="/management">residuos</a>
+                </div>
             </li>
             <li>
               {/* Link a la página de reciclaje */}
@@ -30,9 +29,14 @@ const Header = () => {
               {/* Link al quiz */}
               <Link to="/quiz">quiz</Link>
             </li>
-            <li>
-              {/* Link a la pagina afsr */}
-              <Link to="/management">residuos</Link>
+            <li class="dropdown">
+              {/* Link a la página de login */}
+              <a href="#profile" class="dropbtn">Perfil</a>
+                <div class="dropdown-content">
+                    <a href="/login">Mi perfil</a>
+                    <a href="#logout">Cerrar sesión</a>
+                </div>
+
             </li>
           </ul>
         </nav>

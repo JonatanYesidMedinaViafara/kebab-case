@@ -1,36 +1,63 @@
-header {
-  padding: 1rem; /* Añade un espacio interno de 1 rem (16px por defecto) alrededor del header */
-  background-color: #674636; /* Color de fondo marrón oscuro */
-  position: fixed; /* Fija el header en su posición, de modo que no se desplace al hacer scroll */
-  height: 100vh; /* El header ocupa el 100% de la altura de la ventana */
-  width: auto; /* El header ocupa el 100% del ancho de la pantalla */
-  top: 0; /* Posiciona el header en la parte superior de la pantalla */
-  left: 0; /* Posiciona el header en el lado izquierdo de la pantalla */
-  padding-top: 20px; /* Añade un espacio superior de 20px dentro del header */
+
+nav {
+  background-color: #D9D9D9;
+  overflow: hidden;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
 
 nav ul {
-  display: flex; /* Usa Flexbox para alinear los elementos del menú */
-  list-style: none; /* Elimina los puntos de lista predeterminados de los elementos <li> */
-  flex-direction: column; /* Alinea los elementos de la lista en una columna vertical */
+  list-style-type: none;
 }
 
 nav ul li {
-  padding: 15px; /* Añade un espacio interno de 15px alrededor de cada elemento de la lista */
-}
-
-nav ul li:last-child {
-  margin-right: 0; /* El último elemento no tendrá margen derecho adicional */
+  float: left;
 }
 
 nav ul li a {
-  color: white; /* Establece el color del texto de los enlaces en blanco */
-  text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
-  font-size: 18px; /* Establece el tamaño de fuente de los enlaces a 18px */
+  display: flex;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
 }
 
 nav ul li a:hover {
-  text-decoration: underline; /* Subraya el enlace cuando el usuario pasa el ratón por encima */
-  background-color: #a5d1ac; /* Cambia el color de fondo del enlace cuando se hace hover */
-  transition: 0.3s; /* Añade una transición suave de 0.3 segundos en el cambio de fondo */
+  background-color: #A6998A;
+  color: black;
+}
+
+/* Estilos para las secciones */  
+section {
+  padding: 60px 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mostrar el contenido del menú desplegable al pasar el cursor */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilos para las secciones */
+section {
+  padding: 60px 20px;
 }

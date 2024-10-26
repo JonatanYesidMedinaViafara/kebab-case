@@ -62,10 +62,12 @@ export default function Login() {
 
     // Retornamos el JSX que define la interfaz de usuario del componente
     return (
+        <>
+        <Header /> {/* Mostramos el componente de encabezado */}
         <div className="container-login"> {/* Contenedor principal con clase CSS */}
+        
             {user ? ( // Si hay un usuario autenticado
-                <>
-                    <Header /> {/* Mostramos el componente de encabezado */}
+                    <>
                     <p className="welcome-text"> {/* Texto de bienvenida */}
                         ¡ Bienvenido {user.displayName} ! {/* Muestra el nombre del usuario */}
                     </p>
@@ -81,7 +83,7 @@ export default function Login() {
                         </div>
                         <div className="text">Cerrar sesión</div> {/* Texto del botón */}
                     </button>
-                </>
+                    </>
             ) : ( // Si no hay un usuario autenticado
                 <div className="form"> {/* Contenedor del formulario */}
                     <p>Bienvenidos {/* Texto de bienvenida */}
@@ -122,5 +124,6 @@ export default function Login() {
                 </div>
             )}
         </div>
+        </>
     );
 }
