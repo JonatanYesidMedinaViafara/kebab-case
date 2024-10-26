@@ -6,7 +6,7 @@ const Map = () => {
     <>
       <Header />
       <div className="App">
-      <h1>Tierra</h1>
+      <h1>MAPA</h1>
       <div className="scroll-box">
         <p>
           Desarrollo de una aplicación web interactiva que busca concientizar sobre problemáticas ambientales en Yumbo, utilizando un entorno virtual con un NPC de diálogos predeterminados. El proyecto se enfocará en la implementación de funcionalidades que permitan la interacción del usuario y la simulación de escenarios que reflejen el impacto ambiental.
@@ -20,7 +20,9 @@ const Map = () => {
         <p>
           Continuar agregando más contenido aquí.
         </p>
-        {/* Añade más párrafos según sea necesario */}
+
+        
+        
       </div>
     </div>
     </>
