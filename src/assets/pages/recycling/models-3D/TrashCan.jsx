@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei"; // Importa la función useGLTF para
 // Definición del componente funcional TrashCan
 const TrashCan = (props) => {
     // Desestructuración del objeto retornado por useGLTF, que contiene los nodos y materiales del modelo GLTF
-    const { nodes, materials } = useGLTF("modelo3D/earth.glb"); // Carga el modelo 3D desde el archivo GLB ubicado en "modelo3D/earth.glb"
+    const { nodes, materials } = useGLTF("modelo3D/arbol.glb"); // Carga el modelo 3D desde el archivo GLB ubicado en "modelo3D/earth.glb"
     
     return (
         // El grupo principal que contiene las diferentes partes del modelo
@@ -23,4 +23,4 @@ const TrashCan = (props) => {
 export default TrashCan; // Exporta el componente TrashCan para ser utilizado en otras partes de la aplicación
 
 // Precarga el modelo 3D para mejorar el rendimiento y reducir el tiempo de carga
-useGLTF.preload("modelo3D/earth.glb");
+useGLTF.preload("modelo3D/arbol.glb");
