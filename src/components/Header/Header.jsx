@@ -32,6 +32,9 @@ const Header = () => {
                 <Link to="#logout">Cerrar sesión</Link>
               </div>
             </li>
+            <li>
+            <Link to="/login">Mi perfil</Link>
+            </li>
           </ul>
         </nav>
       </header>

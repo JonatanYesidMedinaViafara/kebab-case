@@ -9,7 +9,7 @@ import RecyCling from "./assets/pages/recycling/Recycling.jsx";
 import Page404 from "./assets/pages/page-404/Page404.jsx";
 import Erosion from "./assets/pages/earth/soil-erosion/erosion.jsx";
 import Management from "./assets/pages/earth/improper-waste-management/management.jsx";
-import Map from "./assets/pages/map/map.jsx";
+import Map from "./assets/pages/map/Map.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/login" replace /> },
