@@ -1,6 +1,5 @@
 import Header from "../../../components/Header/Header";
 import "./Home.css";
-import Earth3d from "./modelo3d/elements3d/eart3d";
 
 const Home = () => {
   return (
@@ -35,7 +34,6 @@ const Home = () => {
           </div>
         </button>
       </div>
-    <Earth3d /> 
     </>
   );
 };
