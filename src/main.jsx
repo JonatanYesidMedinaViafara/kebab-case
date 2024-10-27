@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Login from "./assets/pages/login/Login.jsx";
 import Quiz from "./assets/pages/quiz/Quiz.jsx";
 import Home from "./assets/pages/home/Home.jsx";
@@ -12,6 +12,7 @@ import Management from "./assets/pages/earth/improper-waste-management/managemen
 import Map from "./assets/pages/map/map.jsx";
 
 const router = createBrowserRouter([
+  { path: "/", element: <Navigate to="/login" replace /> },
   { path: "/login",element: <Login />,},
   { path: "/Quiz", element: <Quiz />,},
   { path: "/home", element: <Home /> },
