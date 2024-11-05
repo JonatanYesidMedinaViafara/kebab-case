@@ -1,76 +1,96 @@
-/* Estilos generales para la sección de erosión en la página de inicio */
-.home-erosion {
-    color: #000000; /* Color de texto negro */
-    max-width: 0; /* Ancho máximo de 1200px para la sección */
-    padding: 0; /* Espaciado interno de 20px */
-    background-color: #fff; /* Color de fondo blanco */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la sección */
-    border-radius: 10px; /* Bordes redondeados con un radio de 10px */
+.erosion-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* Color de fondo suave */
 }
 
-/* Estilos para el título principal */
-.tituloPrincipal {
-    text-align: center; /* Centra el texto horizontalmente */
-    margin-top: 2rem; /* Margen superior de 2rem */
-    color: #2196F3; /* Color azul claro para el título */
-    /* Azul claro */
-    animation: tituloPrincipalAnimacion 1s ease-in-out; /* Aplica animación al título */
+.erosion-card {
+    justify-content: center; 
+    flex: 1;
+    min-width: 250px;
+    /* Ancho mínimo para cada contenedor */
+    max-width: calc(33.333% - 20px);
+    /* Ancho máximo para 3 elementos por fila con espacio entre ellos */
+    padding: 20px;
+    border: 2px solid #000;
+    /* Borde negro */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    background-color: #fff;
+    /* Fondo blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
 }
 
-/* Estilos para los títulos de sección */
-.tituloSeccion {
-    margin-top: 1.5rem; /* Margen superior de 1.5rem */
-    color: #333; /* Color gris oscuro para el texto */
+/* Estilos para las secciones */
+.info-section {
+    margin-bottom: 20px;
+    /* Espaciado entre secciones */
 }
 
-/* Estilos para los elementos de la lista */
-.elementoLista {
-    margin-bottom: 0.5rem; /* Margen inferior de 0.5rem */
-    transition: transform 0.2s ease-in-out; /* Transición suave para transformaciones */
+.section-title {
+    
+    justify-content: center; 
+    font-size: 1.5em;
+    /* Tamaño de fuente más grande */
+    margin-bottom: 10px;
+    /* Espaciado debajo del título */
+    color: #333;
+    /* Color de texto oscuro */
 }
 
-/* Estilos para el contenido principal */
-.container {
-    max-width: 800px; /* Ancho máximo de 800px para el contenedor */
-    margin: 2rem auto; /* Margen superior de 2rem y centrado horizontalmente */
-    padding: 2rem; /* Espaciado interno de 2rem */
-    background-color: #fff; /* Color de fondo blanco */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
-    border-radius: 5px; /* Bordes redondeados con un radio de 5px */
-    transition: box-shadow 0.2s ease-in-out; /* Transición suave para la sombra */
-}
-
-/* Estilos para las secciones que contienen información */
-.seccion {
-    margin-bottom: 2rem; /* Margen inferior de 2rem para separación */
-}
-
-/* Estilos para los elementos de la lista al pasar el ratón */
-.elementoLista:hover {
-    transform: translateX(5px); /* Desplaza el elemento 5px a la derecha al pasar el ratón */
+.list-item {
+    margin: 5px 0;
+    /* Espaciado entre elementos de la lista */
 }
 
 /* Estilos para la conclusión */
-.conclusion {
-    text-align: center; /* Centra el texto horizontalmente */
-    font-style: italic; /* Aplica estilo itálico al texto */
-    margin-top: 2rem; /* Margen superior de 2rem */
+.summary {
+    margin-top: 20px;
+    /* Espaciado arriba de la conclusión */
+    font-weight: bold;
+    /* Negrita para destacar la conclusión */
+    text-align: center;
+    /* Centrar el texto de conclusión */
 }
 
-/* Interactividad del contenedor al pasar el ratón */
-.container:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+/* Estilos para las burbujas de fondo */
+.background-effects {
+    position: relative;
+    overflow: hidden;
+    /* Ocultar burbujas fuera del contenedor */
 }
 
-/* Animación para el título principal */
-@keyframes tituloPrincipalAnimacion {
+.floating-bubbles {
+    position: absolute;
+    bottom: 0;
+    /* Alinear burbujas al fondo */
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    /* No interactuar con las burbujas */
+}
+
+.bubble-animation {
+    position: absolute;
+    bottom: -100px;
+    /* Iniciar fuera de la vista */
+    background: rgba(231, 13, 13, 0.7);
+    /* Color de burbuja */
+    border-radius: 50%;
+    animation: bubbleMovement 15s infinite;
+    /* Animación de burbujas */
+}
+
+@keyframes bubbleMovement {
     0% {
-        opacity: 0; /* Inicia con opacidad 0 (invisible) */
-        transform: translateY(20px); /* Inicia desplazado 20px hacia abajo */
+        transform: translateX(0) scale(1);
     }
 
     100% {
-        opacity: 1; /* Termina con opacidad 1 (visible) */
-        transform: translateY(0); /* Termina en su posición original */
+        transform: translateX(calc(50vw - 50%)) translateY(-100vh) scale(0);
     }
 }

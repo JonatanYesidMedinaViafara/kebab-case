@@ -6,7 +6,7 @@ const Page404 = () => {
     <>
       <Header />
       <div className="container">
-        <p>Lo sentimos, la página que buscas no existe.  f por ti</p>
+        <p>Lo sentimos, la página que buscas no existe.</p>
       </div>
     </>
   );

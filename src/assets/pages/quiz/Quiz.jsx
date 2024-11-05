@@ -16,7 +16,7 @@ const Quiz = () => {
         <>
             <Header /> {/* Renderiza el componente Header al inicio */}
             <div className="quiz-container"> {/* Contenedor principal del quiz */}
-                <h1 className="quiz-header">A A poner a prueba tus conocimientos</h1> {/* Encabezado del quiz */}
+                <h1 className="quiz-header">A poner a prueba tus conocimientos</h1> {/* Encabezado del quiz */}
                 <p className="quiz-progress">Progreso del Quiz: {quiz.percentageQuizCompleted}%</p> {/* Muestra el progreso del quiz en porcentaje */}
                 <button className="next" onClick={onHandleButtonNext}>Siguiente</button> {/* Botón para avanzar al siguiente paso del quiz */}
             </div>

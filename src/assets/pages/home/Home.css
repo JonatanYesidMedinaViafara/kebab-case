@@ -6,19 +6,32 @@
 }
 
 /* Estilo del contenedor principal */
-.container-home {
+.containerhome {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     color: #000;
     margin: 50px auto;
-    padding: 20px;
+    padding: 20px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    width: 90%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container-home {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
     background-color: #eee;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 600px;
-    height: 250px;
+    height: 240px;
+    width: 90%;
     border: 2px solid black;
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center; /* Añadido para centrar el contenido dentro del contenedor */
+    overflow: hidden;
+    text-align: center;
 }
 
 h1, p {
@@ -35,7 +48,7 @@ h1, p {
     background: transparent;
     border: none;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 100px; /* Agrega un margen superior significativo */
 }
 
 .wrapper {
@@ -57,7 +70,6 @@ h1, p {
     background: #d9d9d981;
     transition: all 0.5s ease;
     text-decoration: none;
-
 }
 
 .flower {
@@ -118,3 +130,16 @@ h1, p {
 @keyframes flower4 { from { transform: rotate(15deg); } to { transform: rotate(375deg); } }
 @keyframes flower5 { from { transform: rotate(25deg); } to { transform: rotate(-335deg); } }
 @keyframes flower6 { from { transform: rotate(30deg); } to { transform: rotate(390deg); } }
+
+/* Nuevo estilo para el contenedor de contenido */
+.text-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 20px; /* Espacio entre el texto y la escena 3D */
+}
+
+/* Ajuste para el contenedor de la escena 3D */
+.container-3d-tierra {
+    flex: 1;
+    height: 270px;
+}

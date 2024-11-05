@@ -1,0 +1,9 @@
+.container-3d {
+    position: relative; /* El contenedor tendrá una posición relativa para situar otros elementos respecto a él */
+    width: 90%; /* Ocupa el 90% del ancho disponible de la ventana */
+    height: 100%; /* Ocupa el 100% de la altura disponible */
+    position: fixed; /* Se fija en la ventana del navegador, no se desplaza al hacer scroll */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    background-color: antiquewhite; /* Establece un color de fondo claro para el contenedor */
+}
