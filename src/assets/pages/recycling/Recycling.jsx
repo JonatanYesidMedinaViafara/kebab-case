@@ -6,7 +6,7 @@ import "./Recycling.css"; // Importa los estilos para el componente desde Recycl
 import Earth3d from "../home/modelo3d/elements3d/eart3d";
 
 // Definición del componente funcional RecyCling
-const Recycling = () => {
+const RecyCling = () => {
   return (
     <>
       {/* Renderiza el componente Header en la parte superior */}
@@ -43,4 +43,4 @@ const Recycling = () => {
 
 
 
-export default Recycling; // Exporta el componente RecyCling para ser usado en otras partes de la aplicación
+export default RecyCling; // Exporta el componente RecyCling para ser usado en otras partes de la aplicación
