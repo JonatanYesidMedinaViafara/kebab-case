@@ -1,7 +1,7 @@
 import Header from "../../../../../components/Header/Header"; // Importa el componente Header desde la ruta especificada
 import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
 import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
-import "../css/ReciCling.css"; // Importa los estilos para el componente desde Recycling.css
+import "../css/RecyCling.css"; // Importa los estilos para el componente desde Recycling.css
 
 import City3d from "../../models3d/City3d";
 import TrashCan from "../../models3d/TrashCan";
