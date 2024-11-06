@@ -1,6 +1,5 @@
-import Header from "../../../../components/Header/Header";
+import Header from "../../../../components/Header/Header"; 
 import "./deforestation.css";
-/*import Earth3d from "./modelo3D/earth_holograma";*/
 
 import introduction_1 from './image/introduction_1.jpg';
 import introduction_2 from './image/introduction_2.jpg';
@@ -31,14 +30,15 @@ const Deforestation = () => {
   return (
     <>
       <Header />
+      
+      
       <h1>Guia de perdida de Deforestación</h1>
 
         {/* Sección 0 - Introducción */}
         <section className="section">
         <h2 className="section-title">0. Introducción</h2>
         <div className="animation-container" style={{ height: '400px' }}>
-          {/* Animación 3D de introducción */}
-    
+        
         </div>
         <ul className="section-points">
           <li>La deforestación es el proceso mediante el cual se eliminan extensas áreas de bosques o masas 
@@ -56,6 +56,7 @@ const Deforestation = () => {
              <img src={introduction_5} />
              </section>
         </ul>
+
 
       </section>
 
