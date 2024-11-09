@@ -1,0 +1,34 @@
+gosorio@DESKTOP-78GDB06:~/myapp$ cat .github/workflows/*
+   name: Deploy to Render
+
+   on:
+     push:
+       branches:
+         - main
+
+   jobs:
+     test-and-deploy:
+       runs-on: ubuntu-latest
+
+       steps:
+       - name: Validacion previa
+         run: find .
+
+       - name: Checkout code
+         uses: actions/checkout@v3
+
+
+       - name: Validacion previa
+         run: find .
+
+       - name: Set up Python
+         uses: actions/setup-python@v4
+         with:
+           python-version: '3.x'
+
+       - name: Install pytest
+         run: pip install pytest
+
+       - name: Deploy to Render
+         run: |
+           curl -X POST "https://api.render.com/deploy/srv-csnbgolumphs73dc75g0?key=l3j6c7dwgbw" -H "Content-Type: application/json" -d '{}'
