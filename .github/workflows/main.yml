@@ -1,4 +1,3 @@
-gosorio@DESKTOP-78GDB06:~/myapp$ cat .github/workflows/*
    name: Deploy to Render
 
    on:
