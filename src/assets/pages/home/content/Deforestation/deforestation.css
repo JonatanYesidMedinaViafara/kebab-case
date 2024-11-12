@@ -1,39 +1,31 @@
-/* Estilos generales para la sección de erosión en la página de inicio */
-.home-erosion {
+.topic-page-container  {
     color: #000000; /* Color de texto negro */
-    max-width: 750px; /* Ancho máximo de 1200px para la sección */
-    padding: 5%; /* Espaciado interno de 20px */
-    background-color: #40211A; /* Color de fondo blanco */
+    max-width: 0; /* Ancho máximo de 1200px para la sección */
+    padding: 0; /* Espaciado interno de 20px */
+    background-color: #fff; /* Color de fondo blanco */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la sección */
-    border-radius: 600px; /* Bordes redondeados con un radio de 10px */
-    position: relative;
-    left: 50px;
-    top: 100px;
+    border-radius: 10px; /* Bordes redondeados con un radio de 10px */
 }
-
 /* Estilos para el título principal */
-.tituloPrincipal {
+.page-title {
     text-align: center; /* Centra el texto horizontalmente */
     margin-top: 2rem; /* Margen superior de 2rem */
-    color: #D9D9D9; /* Color azul claro para el título */
+    color: #2196F3; /* Color azul claro para el título */
     /* Azul claro */
     animation: tituloPrincipalAnimacion 1s ease-in-out; /* Aplica animación al título */
 }
-
 /* Estilos para los títulos de sección */
-.tituloSeccion {
+.section {
     margin-top: 1.5rem; /* Margen superior de 1.5rem */
     color: #333; /* Color gris oscuro para el texto */
 }
-
 /* Estilos para los elementos de la lista */
 .elementoLista {
     margin-bottom: 0.5rem; /* Margen inferior de 0.5rem */
     transition: transform 0.2s ease-in-out; /* Transición suave para transformaciones */
 }
-
 /* Estilos para el contenido principal */
-.container {
+.topic-page-container {
     max-width: 800px; /* Ancho máximo de 800px para el contenedor */
     margin: 2rem auto; /* Margen superior de 2rem y centrado horizontalmente */
     padding: 2rem; /* Espaciado interno de 2rem */
@@ -42,50 +34,32 @@
     border-radius: 5px; /* Bordes redondeados con un radio de 5px */
     transition: box-shadow 0.2s ease-in-out; /* Transición suave para la sombra */
 }
-
 /* Estilos para las secciones que contienen información */
 .seccion {
     margin-bottom: 2rem; /* Margen inferior de 2rem para separación */
 }
-
 /* Estilos para los elementos de la lista al pasar el ratón */
 .elementoLista:hover {
     transform: translateX(5px); /* Desplaza el elemento 5px a la derecha al pasar el ratón */
 }
-
 /* Estilos para la conclusión */
 .conclusion {
     text-align: center; /* Centra el texto horizontalmente */
     font-style: italic; /* Aplica estilo itálico al texto */
     margin-top: 2rem; /* Margen superior de 2rem */
 }
-
 /* Interactividad del contenedor al pasar el ratón */
 .container:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
 }
-
-.title-text {
-    color: #3F7417;
-    font-family: 'Inter', sans-serif;
-    font-weight: 900; /* Black */
-    font-style: italic;
-    font-size: 80px; /* Tamaño de fuente, ajústalo según necesites */   
-    position: relative; /* Permite el control de la posición */
-    left: 100px; /* Ajusta según necesites moverlo horizontalmente */
-    top: 50px; /* Ajusta para moverlo verticalmente */
-}
-
 /* Animación para el título principal */
 @keyframes tituloPrincipalAnimacion {
     0% {
         opacity: 0; /* Inicia con opacidad 0 (invisible) */
         transform: translateY(20px); /* Inicia desplazado 20px hacia abajo */
     }
-
     100% {
         opacity: 1; /* Termina con opacidad 1 (visible) */
         transform: translateY(0); /* Termina en su posición original */
     }
 }
-

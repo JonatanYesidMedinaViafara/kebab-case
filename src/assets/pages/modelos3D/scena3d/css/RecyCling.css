@@ -5,6 +5,5 @@
     position: fixed; /* Se fija en la ventana del navegador, no se desplaza al hacer scroll */
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center; /* Centra el contenido verticalmente */
-    background-color: antiquewhite; /* Establece un color de fondo claro para el contenedor */ 
-    
+    background-color: antiquewhite; /* Establece un color de fondo claro para el contenedor */
 }

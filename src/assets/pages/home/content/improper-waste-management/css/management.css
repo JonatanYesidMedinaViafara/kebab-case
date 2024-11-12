@@ -1,0 +1,132 @@
+/* Estilos generales para la sección de erosión en la página de inicio */
+body {
+    background-color: #D9D9D9;
+    
+}
+
+.home-erosion {
+    color: #000000;
+    max-width: 37vw; /* Limita el ancho máximo para evitar desbordamiento */
+    padding: 5%;
+    background-color: #D2B48C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 600px;
+    position: relative;
+    user-select: none;
+
+    right: 450px;
+    top: 100px;
+    margin: auto; /* Centrado horizontal */
+    overflow: hidden;
+}
+
+/* Estilos para el título principal */
+.tituloPrincipal {
+    text-align: center;
+    margin-top: 2rem;
+    color: #404040;
+    animation: tituloPrincipalAnimacion 1s ease-in-out;
+}
+
+/* Estilos para el título en .title-text */
+.title-text {
+    color: #8C695D ;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 4vw;
+    position: relative;
+    right: 90px;
+    top: 50px;
+    text-align: center; /* Centrado para mejorar presentación */
+    max-width: 90vw; /* Limita ancho del título */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 80vw; /* Limita el ancho del contenedor */
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: box-shadow 0.2s ease-in-out;
+    overflow-x: hidden;
+}
+
+/* Contenedor del modelo 3D en .ciudadcita */
+.ciudadcita {
+    position: fixed;
+    width: 45vw;
+    height: 70vh;
+    left: auto; /* Alinea automáticamente */
+    right: 100px; 
+    top: 250px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Media Query para pantallas grandes (1025px en adelante) */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+/* Media Query para tablets (entre 768px y 1024px) */
+@media (max-width: 1024px) {
+    .home-erosion {
+        max-width: 80vw; /* Ajustado para evitar desbordamiento */
+        padding: 4%;
+        left: 0; /* Centrado */
+        margin: auto;
+        top: 80px;
+    }   
+
+    .ciudadcita {
+        position: relative;
+        width: 50vw;
+        height: 80vh;
+        left: auto;
+        right: 10px; /* Ajustado para evitar desbordamiento */
+    }
+
+    .title-text {
+        font-size: 6vw;
+        left: 0; /* Centrado */
+        margin: auto;
+        top: 30px;
+    }
+}
+
+/* Media Query para dispositivos móviles (767px o menos) */
+@media (max-width: 767px) {
+    .home-erosion {
+        max-width: 90vw;
+        padding: 4%;
+        left: 0;
+        margin: auto;
+        top: 60px;
+    }
+
+    .ciudadcita {
+        width: 80vw;
+        height: 40vh;
+        left: 0;
+        margin: auto;
+        top: 200px;
+    }
+
+    .title-text {
+        font-size: 8vw;
+        left: 0;
+        margin: auto;
+        top: 20px;
+    }
+}
+

@@ -1,0 +1,120 @@
+.home-erosion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    /* Color de fondo suave */
+}
+
+.subtituloSeccion {
+    color: #404040;
+}
+
+
+
+/* Estilos para las secciones */
+.seccion {
+    margin-bottom: 20px;
+    /* Espaciado entre secciones */
+}
+
+.tituloSeccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Cambiado de flex-start a center */
+    font-size: 2.0em;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    color: #8C695D;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.8vw;
+}
+
+.subtituloSeccion {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1vw;
+
+}
+
+.elementoLista {
+    margin: 5px 0;
+    /* Espaciado entre elementos de la lista */
+}
+
+.erosion-container {
+    height: 1100px;
+}
+
+
+.bubbles {
+    position: absolute;
+    bottom: 0;
+    /* Alinear burbujas al fondo */
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    /* No interactuar con las burbujas */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    /* Iniciar fuera de la vista */
+    /* Color de burbuja */
+    border-radius: 50%;
+    animation: bubble 15s infinite;
+    /* Animación de burbujas */
+}
+
+.tierragrieta{
+    border-radius: 400px;
+    background-color: #A6998A;
+    position: relative;
+    width: 34vw;
+    height: 60vh;
+    left: 150px;
+    right: 100px; 
+    top: 200px;
+    
+    
+    overflow: hidden;
+}
+
+.info-box {
+    background-color: #f7f0be; /* Color de fondo similar al de la imagen */
+    color: #333; /* Color del texto */
+    padding: 20px; /* Espacio interno */
+    border-radius: 15px; /* Bordes redondeados */
+    border: 2px solid #8c6b23; /* Color y grosor del borde */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 40%; /* Ancho ajustable */   
+    height: 700px;
+    position: absolute;
+    right: 100px;
+    top: 1500px;
+    /*Fuente Chida*/
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3vw;
+}
+
+.info-box h3 {
+    margin-top: 20px;
+    color: #8c6b23; /* Color del título */
+}
+
+
+@keyframes bubble {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+
+    100% {
+        transform: translateX(calc(50vw - 50%)) translateY(-100vh) scale(0);
+    }
+}
