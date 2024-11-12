@@ -47,4 +47,3 @@ const Home = () => {
 };
 
 export default Home;
-/*Habia conflictos en home en lugar de Home*/

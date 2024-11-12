@@ -4,7 +4,7 @@ import "./Login.css";
 import { useCallback, useEffect } from "react";
 
 // Importamos el hook personalizado que maneja el estado de autenticación
-import useAuthStore from "../../Stores/use-auth-store";
+import useAuthStore from "../../stores/use-auth-store";
 
 // Importamos el DAO de usuarios que permite interactuar con la base de datos de usuarios
 import UserDAO from "../daos/UserDAO";
@@ -131,6 +131,3 @@ export default function Login() {
         </>
     );
 }   
-
-//Fallos en store en lugar de Store
-//Fallos en login en lugar de Login

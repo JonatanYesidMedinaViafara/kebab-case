@@ -13,7 +13,7 @@ import UserDAO from "../../DAO/UserDaAO";
 import { useNavigate } from "react-router-dom";
 
 // Importamos el componente de encabezado
-import Header from "../Header/Header";
+import Header from "../../Pages/Header/Header";
 
 // Importamos React para la definición de componentes funcionales
 import React from "react";
@@ -125,5 +125,3 @@ export default function Login() {
         </>
     );
 }   
-//Mismo conflicto de nombre tenia login en lugar de Login
-// Ademas tenia error en pages en lugar de Pages
