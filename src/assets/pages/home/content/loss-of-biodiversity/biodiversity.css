@@ -1,3 +1,5 @@
+/* Archivo: TopicPage.css */
+
 .topic-page-container {
     max-width: 800px;
     margin: 0 auto;
@@ -39,4 +41,87 @@
     background-color: #e0e0e0;
     padding: 10px;
     border-radius: 8px;
+  }
+  ul.sublist {
+    list-style-type: circle; /* Cambia el estilo del subpunto */
+    margin-left: 20px; /* Indenta los subpuntos hacia la derecha */
+  }
+  
+  ul.sublist li {
+    font-size: 0.9em; /* Reduce el tamaño de la fuente si es necesario */
+  }
+  
+  .sectionf {
+    display: flex;
+    width: 1500px;
+    height: 430px;
+    opacity: 0.8;
+    transition: 0.5s ease;
+}
+
+.sectionf img {
+    flex-grow: 1;
+    object-fit: cover;
+    width: 0px;
+    transition: 0.5s ease;
+}
+
+.sectionf img:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+    /* Estilo del título */
+.biodiversity_title {
+    font-size: 5rem;
+    color: #ffffff;
+    position: relative;
+    font-family: Arial, sans-serif;
+    animation: float3D 3s infinite alternate;
+    text-shadow: 1px 1px 2px #000000, 3px 3px 5px #333333;
+   }
+    
+    @keyframes float3D {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      50% {
+        transform: rotateX(10deg) rotateY(10deg);
+      }
+      100% {
+        transform: rotateX(-10deg) rotateY(-10deg);
+      }
+    }
+  .biodiversity_sub_title{
+      font-size: 2rem;
+      color: #020202;
+      position: relative;
+      font-family: Arial, sans-serif;
+      animation: float3D 3s infinite alternate;
+      text-shadow: 1px 1px 2px #000000, 3px 3px 5px #333333;
+    }
+    
+    @keyframes float3D {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      50% {
+        transform: rotateX(10deg) rotateY(10deg);
+      }
+      100% {
+        transform: rotateX(-10deg) rotateY(-10deg);
+      }
+    }
+
+  li {
+      font-size: 1.2em;
+      color: #333;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  li:hover {
+      color: #0011ff;
+      text-shadow: 1px 1px 5px rgba(0, 115, 230, 0.5);
   }
