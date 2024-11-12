@@ -200,4 +200,4 @@ const Deforestation = () => {
   );
 };
 
-export default Deforestation;
+export default Deforestation; 
