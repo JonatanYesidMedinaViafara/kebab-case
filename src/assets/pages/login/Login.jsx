@@ -126,3 +126,4 @@ export default function Login() {
     );
 }   
 //Mismo conflicto de nombre tenia login en lugar de Login
+// Ademas tenia error en pages en lugar de Pages
