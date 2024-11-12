@@ -1,6 +1,6 @@
-import "./Header.css"; // Importa los estilos del archivo Header.css
 import { Link } from "react-router-dom"; // Importa el componente Link de react-router-dom para la navegación
-import useAuthStore from "../.././stores/use-auth-store";
+import useAuthStore from "../../Stores/use-auth-store";
+import "./Header.css"; // Importa los estilos del archivo Header.css
 
 // Definición del componente Header como una función de React
 const Header = () => {
