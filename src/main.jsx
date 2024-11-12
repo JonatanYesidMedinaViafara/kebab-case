@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import Deforestation from './assets/pages/Home/content/Deforestation/deforestation';
+import Deforestation from './assets/pages/Home/content/deforestation/deforestation';
 import Management from './assets/pages/Home/content/improper-waste-management/management';
 import Biodiversity from './assets/pages/Home/content/loss-of-biodiversity/biodiversity';
 import Erosion from './assets/pages/Home/content/soil-erosion/erosion';
