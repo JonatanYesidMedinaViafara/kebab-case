@@ -1,5 +1,8 @@
 import Header from "../../../Header/Header";
 import "./biodiversity.css";
+import Scene from "./illustrations_3D/ilustration_3D_2";
+import BiodiversityScene from './illustrations_3D/illustration_3D_1';
+
 import introduction_1 from './image/introduction_1.jpg';
 import introduction_2 from './image/introduction_2.jpg';
 import introduction_3 from './image/introduction_3.jpg';
@@ -36,7 +39,8 @@ const Biodiversity = () => {
         <h2 className="biodiversity_sub_title">0. Introducción</h2>
         <div className="animation-container" style={{ height: '400px' }}>
           {/* Animación 3D de introducción */}
- 
+        {/*<BiodiversityScene/>"*/}
+        <BiodiversityScene/>
         </div>
         <ul className="section-points">
           <li>La biodiversidad hace referencia a la variedad de todas las formas de vida en la Tierra, 
@@ -59,7 +63,7 @@ const Biodiversity = () => {
         <h2 className="biodiversity_sub_title">1. Causas</h2>
         <div className="animation-container" style={{ height: '400px' }}>
           {/* Animación 3D de introducción */}
-        
+        <Scene/>
         </div>
         <ul className="section-points">
           <h3>Cambio climático</h3>

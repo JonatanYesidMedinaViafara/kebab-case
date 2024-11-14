@@ -1,6 +1,9 @@
 import Header from "../../../Header/Header";
 import "./deforestation.css";
-
+import AnimationCanvas from './illustrations_3D/illustration_3D_1.jsx';
+import DeforestationScene from './illustrations_3D/ilustration_3D_2.jsx';
+import SolutionsScene from "./illustrations_3D/illustration_3D_4.jsx";
+ 
 import introduction_1 from './image/introduction_1.jpg';
 import introduction_2 from './image/introduction_2.jpg';
 import introduction_3 from './image/introduction_3.jpg';
@@ -38,8 +41,9 @@ const Deforestation = () => {
         <section className="section">
         <h2 className="deforestation_sub_title">0. Introducción</h2>
         <div className="animation-container" style={{ height: '400px' }}>
-        
+        <AnimationCanvas />
         </div>
+
         <ul className="section-points">
           <li>La deforestación es el proceso mediante el cual se eliminan extensas áreas de bosques o masas 
             forestales, principalmente como resultado de actividades humanas, con el fin de utilizar el suelo
@@ -64,10 +68,12 @@ const Deforestation = () => {
         {/* Sección 1 - causas */}
         <section className="section">
         <h2 className="deforestation_sub_title">1. Causas</h2>
+
         <div className="animation-container" style={{ height: '400px' }}>
-          {/* Animación 3D de introducción */}
-      
-        </div>
+        {/* Animación 3D de introducción */}
+        <DeforestationScene />
+      </div>
+
         <ul className="section-points">
           <li>Agricultura intensiva: Se eliminan grandes áreas de bosque para cultivar productos agrícolas, 
             especialmente monocultivos como la soja o el aceite de palma.</li>
@@ -135,7 +141,7 @@ const Deforestation = () => {
         <h2 className="deforestation_sub_title">3. Soluciones</h2>
         <div className="animation-container" style={{ height: '400px' }}>
           {/* Animación 3D de introducción */}
-     
+          <SolutionsScene/>
         </div>
         <ul className="section-points">
           <h3>Reforestación y forestación</h3>
