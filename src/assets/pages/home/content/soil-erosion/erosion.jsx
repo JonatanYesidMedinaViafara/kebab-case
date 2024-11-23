@@ -1,10 +1,10 @@
-import Header from "../../../Header/Header";
+import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
-import { OrbitControls, useGLTF, Sky } from "@react-three/drei";
+import Header from "../../../header/Header";
 import "./erosion.css";
-import Text3D from "./model/Text3D";
-import ModelSoil3D from "./model/ModelSoil3D"
+import ModelSoil3D from "./model/ModelSoil3D";
 import Personsoil from "./model/Personsoil";
+import Text3D from "./model/Text3D";
 
 const Erosion = () => {
     return (

@@ -1,15 +1,15 @@
 import { OrbitControls } from "@react-three/drei";
-import Header from "../../Header/Header";
+import { Canvas } from "@react-three/fiber";
+import { Link } from "react-router-dom";
+import Header from "../../header/Header";
 import "./map.css";
 import ModelMap3D from "./model3D/ModelMap3D";
 import ModelMapBiodiversity3D from "./model3D/ModelMapBiodiversity3D";
 import ModelMapDeforestation3D from "./model3D/ModelMapDeforestation3D";
 import ModelMapManagement3D from "./model3D/ModelMapManagement3D";
 import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
-import Text3DSoil from "./model3D/Text3DSoil";
-import { Canvas } from "@react-three/fiber";
 import Text3DManagement from "./model3D/Text3DManagement";
-import { Link } from "react-router-dom";
+import Text3DSoil from "./model3D/Text3DSoil";
 
 const Map = () => {
   // Funciones de redirección

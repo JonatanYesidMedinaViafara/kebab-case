@@ -1,8 +1,8 @@
-import Header from "../../Header/Header";
+import { Link } from "react-router-dom";
+import Header from "../../header/Header";
 import Fondo from "./fondo";
 import "./Home.css";
 import Earth3d from "./models/Earth3d";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (

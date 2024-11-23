@@ -1,13 +1,8 @@
-import Header from "../../../Header/Header";
+import Header from "../../../header/Header";
 import "./biodiversity.css";
-import Scene from "./illustrations_3D/ilustration_3D_2";
 import BiodiversityScene from './illustrations_3D/illustration_3D_1';
+import Scene from "./illustrations_3D/ilustration_3D_2";
 import Scene3 from "./illustrations_3D/ilustration_3D_3";
-import introduction_1 from './image/introduction_1.jpg';
-import introduction_2 from './image/introduction_2.jpg';
-import introduction_3 from './image/introduction_3.jpg';
-import introduction_4 from './image/introduction_4.jpg';
-import introduction_5 from './image/introduction_5.jpg';
 import causa_1 from './image/causa_1.jpg';
 import causa_2 from './image/causa_2.jpg';
 import causa_3 from './image/causa_3.jpg';
@@ -18,14 +13,19 @@ import consecuencia_1 from './image/consecuencia_1.jpg';
 import consecuencia_2 from './image/consecuencia_2.jpg';
 import consecuencia_3 from './image/consecuencia_3.jpg';
 import consecuencia_4 from './image/consecuencia_4.jpg';
+import introduction_1 from './image/introduction_1.jpg';
+import introduction_2 from './image/introduction_2.jpg';
+import introduction_3 from './image/introduction_3.jpg';
+import introduction_4 from './image/introduction_4.jpg';
+import introduction_5 from './image/introduction_5.jpg';
+import reflexion_1 from './image/reflexion_1.jpg';
+import reflexion_2 from './image/reflexion_2.jpg';
+import reflexion_3 from './image/reflexion_3.jpg';
 import solucion_1 from './image/solucion_1.jpg';
 import solucion_2 from './image/solucion_2.jpg';
 import solucion_3 from './image/solucion_3.jpg';
 import solucion_4 from './image/solucion_4.jpg';
 import solucion_5 from './image/solucion_5.jpg';
-import reflexion_1 from './image/reflexion_1.jpg';
-import reflexion_2 from './image/reflexion_2.jpg';
-import reflexion_3 from './image/reflexion_3.jpg';
 
 
 const Biodiversity = () => {

@@ -13,7 +13,7 @@ import UserDAO from "../../DAO/UserDaAO";
 import { useNavigate } from "react-router-dom";
 
 // Importamos el componente de encabezado
-import Header from "../../Pages/Header/Header";
+import Header from "../header/Header";
 
 // Importamos React para la definición de componentes funcionales
 import React from "react";

@@ -1,10 +1,10 @@
-import Header from "../../../Header/Header";
+import { OrbitControls, Sky } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
 import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
-import { OrbitControls, useGLTF, Sky } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
+import Header from "../../../header/Header";
 import "./css/management.css";
 import City3d from "./models/City3d";
-import Citytext from "./models/title-city";
 import Person from "./models/person3d";
+import Citytext from "./models/title-city";
 
 const Management = () => {
     return (
