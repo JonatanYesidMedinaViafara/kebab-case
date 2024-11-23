@@ -3,8 +3,6 @@ import "./Login.css";
 // Importamos los hooks de React que se utilizan para manejar funciones y efectos secundarios
 import { useCallback, useEffect } from "react";
 
-// Importamos el hook personalizado que maneja el estado de autenticación
-import useAuthStore from "../../stores/use-auth-store";
 
 // Importamos el DAO de usuarios que permite interactuar con la base de datos de usuarios
 import UserDAO from "../daos/UserDAO";
