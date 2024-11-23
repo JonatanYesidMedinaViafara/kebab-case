@@ -2,15 +2,15 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import "./index.css";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import Login from './Assets/Pages/Login/Login';
-import Home from './Assets/Pages/Home/Introduction/Home';
-import Page404 from './Assets/Pages/page-404/Page404';
-import Deforestation from './Assets/Pages/Home/content/Deforestation/deforestation';
-import Management from './Assets/Pages/Home/content/improper-waste-management/management';
-import Biodiversity from './Assets/Pages/Home/content/loss-of-biodiversity/biodiversity';
-import Map from './Assets/Pages/Home/Map/map';
-import We from './Assets/Pages/Home/nosotros/we';
-import Erosion from './Assets/Pages/Home/content/soil-erosion/erosion';
+import Login from './assets/Pages/Login/Login';
+import Home from './assets/Pages/Home/Introduction/Home';
+import Page404 from './assets/Pages/page-404/Page404';
+import Deforestation from './assets/Pages/Home/content/Deforestation/deforestation';
+import Management from './assets/Pages/Home/content/improper-waste-management/management';
+import Biodiversity from './assets/Pages/Home/content/loss-of-biodiversity/biodiversity';
+import Map from './assets/Paages/Home/Map/map';
+import We from './assets/Pages/Home/nosotros/we';
+import Erosion from './assets/Pages/Home/content/soil-erosion/erosion';
 
 
 
