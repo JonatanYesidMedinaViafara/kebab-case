@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import TreesComponent from '../modelo3D/earth_holograma';
 
 const Tree = ({ position, isCutDown, onCutDown }) => {
   const trunkRef = useRef();
@@ -122,7 +123,7 @@ const AnimationCanvas = () => {
         intensity={20}
         color="#FF4500" // Color cálido intenso
       />
-
+      
       {/* Controles de órbita */}
       <OrbitControls
         enableDamping={true}
@@ -141,6 +142,7 @@ const AnimationCanvas = () => {
 
       {/* Bosque */}
       <Forest />
+      <TreesComponent />
     </Canvas>
   );
 };

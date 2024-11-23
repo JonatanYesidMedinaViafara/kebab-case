@@ -2,7 +2,7 @@ import Header from "../../../Header/Header";
 import "./biodiversity.css";
 import Scene from "./illustrations_3D/ilustration_3D_2";
 import BiodiversityScene from './illustrations_3D/illustration_3D_1';
-
+import Scene3 from "./illustrations_3D/ilustration_3D_3";
 import introduction_1 from './image/introduction_1.jpg';
 import introduction_2 from './image/introduction_2.jpg';
 import introduction_3 from './image/introduction_3.jpg';
@@ -94,7 +94,7 @@ const Biodiversity = () => {
         <h2 className="biodiversity_sub_title">2. Consecuencias</h2>
         <div className="animation-container" style={{ height: '400px' }}>
           {/* Animación 3D de introducción */}
-    
+        <Scene3/>
         </div>
         <ul className="section-points">
           <h3>Desestabilización de los ecosistemas</h3>

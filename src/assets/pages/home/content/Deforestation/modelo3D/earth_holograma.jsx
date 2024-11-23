@@ -1,27 +1,28 @@
-import React, { Suspense } from 'react';
-import { Canvas, extend, useLoader } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import * as THREE from 'three';
+// TreesComponent.jsx
+import React from 'react';
+import { OrbitControls, Html } from '@react-three/drei';
+import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-// Extender THREE si necesitas añadir clases personalizadas o métodos
-extend(THREE);
+function TreesComponent() {
+  const model = useLoader(GLTFLoader, '/src/assets/pages/Home/content/deforestation/modelo3D/trees.gltf');
 
-function EarthHologram() {
-  const gltf = useLoader(GLTFLoader, '/modelo3D/earth_hologram.glb');
-
-  return <primitive object={gltf.scene} scale={2} />;
-}
-
-export default function Biodiversity() {
   return (
-    <Canvas>
-      <ambientLight intensity={2000} />
-      <spotLight position={[100, 100, 100]} angle={0.15} penumbra={20} />
-      <Suspense fallback={null}>
-        <EarthHologram />
-      </Suspense>
+    <>
+      {/* Órbita para controlar la rotación y visualización */}
       <OrbitControls />
-    </Canvas>
+
+      {/* Modelo 3D */}
+      <primitive object={model.scene} />
+
+      {/* Texto en HTML 3D sobre el modelo 
+      <Html position={[0, 2, 0]}>
+        <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px' }}>
+          Árbol 3D
+        </div>
+      </Html>*/}
+    </>
   );
 }
+
+export default TreesComponent;

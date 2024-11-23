@@ -3,7 +3,11 @@ import "./deforestation.css";
 import AnimationCanvas from './illustrations_3D/illustration_3D_1.jsx';
 import DeforestationScene from './illustrations_3D/ilustration_3D_2.jsx';
 import SolutionsScene from "./illustrations_3D/illustration_3D_4.jsx";
- 
+import React from 'react';
+
+import { Canvas } from '@react-three/fiber';
+import TreesComponent from "./modelo3D/earth_holograma.jsx"; 
+
 import introduction_1 from './image/introduction_1.jpg';
 import introduction_2 from './image/introduction_2.jpg';
 import introduction_3 from './image/introduction_3.jpg';
@@ -40,10 +44,17 @@ const Deforestation = () => {
         {/* Sección 0 - Introducción */}
         <section className="section">
         <h2 className="deforestation_sub_title">0. Introducción</h2>
+        
         <div className="animation-container" style={{ height: '400px' }}>
         <AnimationCanvas />
         </div>
-
+       {/* <div>
+        <Canvas>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <TreesComponent />
+        </Canvas>
+        </div>*/}
         <ul className="section-points">
           <li>La deforestación es el proceso mediante el cual se eliminan extensas áreas de bosques o masas 
             forestales, principalmente como resultado de actividades humanas, con el fin de utilizar el suelo
