@@ -4,7 +4,7 @@ import "./index.css";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
 import Login from './assets/pages/login/Login';
-import Home from './assets/pages/home/introduction';
+import Home from './assets/pages/home/introduction/home';
 import Page404 from './assets/pages/page-404/Page404';
 import Deforestation from './assets/pages/home/content/deforestation/deforestation';
 import Management from './assets/pages/home/content/improper-waste-management/management';
