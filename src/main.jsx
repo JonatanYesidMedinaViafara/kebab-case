@@ -2,15 +2,15 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import "./index.css";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
-import Login from './assets/Pages/Login/Login';
-import Home from './assets/Pages/Home/Introduction/Home';
-import Page404 from './assets/Pages/page-404/Page404';
-import Deforestation from './assets/Pages/Home/content/Deforestation/deforestation';
-import Management from './assets/Pages/Home/content/improper-waste-management/management';
-import Biodiversity from './assets/Pages/Home/content/loss-of-biodiversity/biodiversity';
-import Map from './assets/Paages/Home/Map/map';
-import We from './assets/Pages/Home/nosotros/we';
-import Erosion from './assets/Pages/Home/content/soil-erosion/erosion';
+import Login from './assets/pages/Login/Login';
+import Home from './assets/pages/Home/Introduction/Home';
+import Page404 from './assets/pages/page-404/Page404';
+import Deforestation from './assets/pages/Home/content/Deforestation/deforestation';
+import Management from './assets/pages/Home/content/improper-waste-management/management';
+import Biodiversity from './assets/pages/Home/content/loss-of-biodiversity/biodiversity';
+import Map from './assets/pages/Home/Map/map';
+import We from './assets/pages/Home/nosotros/we';
+import Erosion from './assets/pages/Home/content/soil-erosion/erosion';
 
 
 
