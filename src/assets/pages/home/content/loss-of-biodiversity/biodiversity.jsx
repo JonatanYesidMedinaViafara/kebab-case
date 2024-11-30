@@ -3,6 +3,11 @@ import "./biodiversity.css";
 import BiodiversityScene from './illustrations_3D/illustration_3D_1';
 import Scene from "./illustrations_3D/ilustration_3D_2";
 import Scene3 from "./illustrations_3D/ilustration_3D_3";
+import BiodiversityLossScene from "./loss_RigidBody";
+import { Canvas } from "@react-three/fiber";
+import { Physics } from "@react-three/rapier";
+
+
 import causa_1 from './image/causa_1.jpg';
 import causa_2 from './image/causa_2.jpg';
 import causa_3 from './image/causa_3.jpg';
@@ -41,7 +46,23 @@ const Biodiversity = () => {
           {/* Animación 3D de introducción */}
         {/*<BiodiversityScene/>"*/}
         <BiodiversityScene/>
+
         </div>
+
+        <div>
+        <Canvas
+              camera={{ position: [-10, 10, -10], fov: 60 }}>
+             {/*} <Dog position={[-15, 6.8, -7]} />*/}
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 5]} intensity={1} />
+            {/* Envuelve el bosque en Physics */}
+            <Physics>
+              
+              <BiodiversityLossScene/>
+            </Physics>
+          </Canvas>
+        </div>
+
         <ul className="section-points">
           <li>La biodiversidad hace referencia a la variedad de todas las formas de vida en la Tierra, 
             incluyendo plantas, animales, hongos, microorganismos, y los ecosistemas que los sustentan. 

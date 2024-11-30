@@ -4,8 +4,10 @@ import "./deforestation.css";
 import AnimationCanvas from './illustrations_3D/illustration_3D_1.jsx';
 import SolutionsScene from "./illustrations_3D/illustration_3D_4.jsx";
 import DeforestationScene from './illustrations_3D/ilustration_3D_2.jsx';
-
-
+import { Canvas } from "@react-three/fiber";
+//import Dog from "./dog/Dog.jsx";
+import ForestScene from './forest.jsx';
+// para configurar despues
 import causa_1 from './image/causa_1.jpg';
 import causa_2 from './image/causa_2.jpg';
 import causa_3 from './image/causa_3.jpg';
@@ -30,6 +32,7 @@ import solucion_2 from './image/solucion_2.jpg';
 import solucion_3 from './image/solucion_3.jpg';
 import solucion_4 from './image/solucion_4.jpg';
 import solucion_5 from './image/solucion_5.jpg';
+import { Physics } from '@react-three/rapier';
 
 const Deforestation = () => {
   return (
@@ -44,7 +47,21 @@ const Deforestation = () => {
         <h2 className="deforestation_sub_title">0. Introducción</h2>
         
         <div className="animation-container" style={{ height: '400px' }}>
-        <AnimationCanvas />
+        <AnimationCanvas/>
+ 
+        </div>
+        <div>
+        <Canvas
+              camera={{ position: [-10, 10, -10], fov: 60 }}>
+             {/*} <Dog position={[-15, 6.8, -7]} />*/}
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 5]} intensity={1} />
+            {/* Envuelve el bosque en Physics */}
+            <Physics>
+              
+              <ForestScene />
+            </Physics>
+          </Canvas>
         </div>
        {/* <div>
         <Canvas>

@@ -109,6 +109,7 @@ const Forest = () => {
 };
 
 const AnimationCanvas = () => {
+  
   return (
     <Canvas
       camera={{ position: [-10, 10, -10], fov: 60 }}
