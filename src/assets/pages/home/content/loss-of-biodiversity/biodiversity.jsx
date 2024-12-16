@@ -2,7 +2,9 @@ import Header from "../../../header/Header";
 import "./biodiversity.css";
 import BiodiversityScene from './illustrations_3D/illustration_3D_1';
 import Scene from "./illustrations_3D/ilustration_3D_2";
-import Scene3 from "./illustrations_3D/ilustration_3D_3";
+import BiodiversityLossScene from "./illustrations_3D/ilustration_3D_3";
+import { OrbitControls} from '@react-three/drei';
+
 import causa_1 from './image/causa_1.jpg';
 import causa_2 from './image/causa_2.jpg';
 import causa_3 from './image/causa_3.jpg';
@@ -26,6 +28,8 @@ import solucion_2 from './image/solucion_2.jpg';
 import solucion_3 from './image/solucion_3.jpg';
 import solucion_4 from './image/solucion_4.jpg';
 import solucion_5 from './image/solucion_5.jpg';
+import { Physics } from '@react-three/rapier';
+import { Canvas } from "@react-three/fiber";
 
 
 const Biodiversity = () => {
@@ -93,9 +97,44 @@ const Biodiversity = () => {
         <section className="section">
         <h2 className="biodiversity_sub_title">2. Consecuencias</h2>
         <div className="animation-container" style={{ height: '400px' }}>
-          {/* Animación 3D de introducción */}
-        <Scene3/>
-        </div>
+        <Canvas
+        camera={{ position: [0, 20, 40], fov: 60 }}
+        style={{
+          background: "linear-gradient(to top, #87CEEB, #FFFFFF)",
+        }}
+        shadows
+      >
+
+        {/* Configuración de la niebla */}
+        <fog attach="fog" args={["#A9A9A9", 50, 150]} />
+
+        {/* Luces */}
+        <ambientLight intensity={0.5} />
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1}
+          castShadow // Importante para generar sombras
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+        />
+
+        {/* Controles */}
+        <OrbitControls
+          enableDamping
+          dampingFactor={0.1}
+          rotateSpeed={0.5}
+          maxPolarAngle={Math.PI / 2.5}
+          minDistance={5}
+          maxDistance={30}
+        />
+
+        {/* Física y la escena */}
+        <Physics>
+          <BiodiversityLossScene />
+        </Physics>
+      </Canvas>
+      </div>
+        
         <ul className="section-points">
           <h3>Desestabilización de los ecosistemas</h3>
           <li>Los ecosistemas son redes complejas donde todas las especies, desde los microorganismos hasta los grandes depredadores, 
@@ -251,18 +290,19 @@ const Biodiversity = () => {
         </ul>
       </section>
 
-     <button className="btn">
-              <div className="wrapper">
-                <a href="/quiz" className="inicio">INICIAR PARTIDA</a>
-                {[...Array(6)].map((_, i) => (
-                  <div className={`flower flower${i + 1}`} key={i}>
-                    {[...Array(4)].map((_, j) => (
-                      <div className={`petal ${["one", "two", "three", "four"][j]}`} key={j} />
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </button>
+      <button className="btn">
+  <div className="wrapper">
+    <a href="/quiz" className="inicio">INICIAR PARTIDA</a>
+    {[...Array(6)].map((_, i) => (
+      <div className={`flower flower${i + 1}`} key={i}>
+        {[...Array(4)].map((_, j) => (
+          <div className={`petal ${["one", "two", "three", "four"][j]}`} key={j} />
+        ))}
+      </div>
+    ))}
+  </div>
+</button>
+
 
     </>
   );

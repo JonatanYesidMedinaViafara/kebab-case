@@ -1,0 +1,67 @@
+/* Estilo general para los contenedores */
+.section {
+    background-color: #D9D9D9; /* Color de fondo similar al de la imagen */
+    text-align: justify;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3vw;
+    
+}
+
+/* Estilo para las secciones alineadas a la derecha */
+.section-right {
+    border-radius: 15px; /* Bordes redondeados */
+    border: 2px solid #8c6b23; /* Color y grosor del borde */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    background-color: #f7f0be; /* Color de fondo similar al de la imagen */
+    margin-left: 3%; /* Empuja el contenedor hacia la derecha */
+    margin-right: 600px; /* Espacio en el lado derecho */
+    text-align: right; /* Alineación del texto */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3vw;
+}
+
+/* Estilo para las secciones alineadas a la izquierda */
+.section-left {
+    border-radius: 15px; /* Bordes redondeados */
+    border: 2px solid #8c6b23; /* Color y grosor del borde */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    background-color: #f7f0be; /* Color de fondo similar al de la imagen */
+    margin-right: 3%; /* Empuja el contenedor hacia la izquierda */
+    margin-left: 600px; /* Espacio en el lado izquierdo */
+    text-align: left; /* Alineación del texto */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3vw;
+}
+
+/* Responsivo para que siempre sea centrado en dispositivos pequeños */
+@media (max-width: 768px) {
+    .section {
+        margin: 20px auto; /* Centrado para pantallas pequeñas */
+        width: 90%; /* Reducir ancho */
+        text-align: justify;
+    }
+
+    .section-right,
+    .section-left {
+        margin: 20px auto; /* Quitar alternancia en dispositivos pequeños */
+    }
+}
+
+h3 {
+    position: relative;
+    text-align: center; /* Centrado para mejorar presentación */
+    margin: 10px;
+    color: #8C695D  ; /* Color del título */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3vw;
+    
+}

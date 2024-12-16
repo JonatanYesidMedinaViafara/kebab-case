@@ -1,16 +1,105 @@
-
-.container-login {
-    color: #000;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+/* Contenedor principal de dos columnas */
+.content-container {
+    display: flex; /* Configura diseño horizontal */
+    justify-content: space-between; /* Separa las columnas */
+    align-items: flex-start; /* Alinea verticalmente al inicio */
+    gap: 20px; /* Espacio entre las columnas */
+    margin-top: 20px;
 }
 
-/* Texto de bienvenida y presentación */
-.welcome-text, .present-text {
+/* Columna izquierda (texto) */
+.intro-box {
+    margin-inline-start: 2%;
+    flex: 1; /* Ocupa espacio proporcional */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.8rem;
+    
+}
+
+
+/* Columna derecha (modelo 3D) */
+.model-view {
+    position: relative; /* Posiciona elementos dentro del contenedor */
+    flex: 1; /* Ocupa espacio proporcional */
+    height: 300px; /* Altura fija del espacio 3D */
+    background-color: #eaeaea; /* Fondo gris claro */
+    border: 2px dashed #aaa; /* Línea discontinua como placeholder */
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Botón de inicio sobre el modelo */
+.start-button {
+    position: absolute; /* Coloca el botón encima del contenido */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Corrige el desplazamiento horizontal */
+    width: 60px;
+    height: 60px;
+    background: #A6998A;
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 10; /* Asegura que esté encima */
+}
+
+.start-button:hover {
+    width: 180px;
+}
+
+.start-button .start-icon {
+    font-size: 1.75em;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+}
+
+.start-button:hover .start-icon {
+    transform: scale(0);
+    color: #fff;
+    transition-delay: 0s;
+}
+
+.start-button .start-button-title {
+    position: absolute;
+    color: #fff;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+    text-decoration: none;
+}
+
+.start-button:hover .start-button-title {
+    transform: scale(1);
+    transition-delay: 0.25s;
+}
+
+.start-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
+    background: linear-gradient(45deg, var(--i, #40211A), var(--j, #8C695D));
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.start-button:hover::before {
+    opacity: 1;
+}
+
+/* Mensaje de bienvenida */
+.welcome-message {
     font-size: 1.8rem;
     color: #3b3b3b;
     text-align: center;
@@ -18,67 +107,7 @@
     font-weight: bold;
     letter-spacing: 1px;
 }
-.present-text {
-    font-size: 1.5rem;
-    color: #000;
-    text-align: justify;
-}
 
-/* Botón de cierre de sesión */
-.button-logout {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background: RGB(29, 185, 84);
-}
-.sign {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-}
-.sign svg {
-    width: 18px;
-}
-.sign svg path {
-    fill: black;
-}
-.text {
-    position: absolute;
-    right: 0;
-    width: 0;
-    opacity: 0;
-    color: black;
-    font-size: 1.2em;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.button-logout:hover {
-    width: 125px;
-    border-radius: 40px;
-}
-.button-logout:hover .sign {
-    width: 30%;
-    padding-left: 20px;
-}
-.button-logout:hover .text {
-    opacity: 1;
-    width: 70%;
-    padding-right: 10px;
-}
-.button-logout:active {
-    transform: translate(2px, 2px);
-}
 
 /* Formulario */
 .form {
@@ -106,6 +135,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .form>p>span {
     font-family: var(--font-SpaceMono);
     color: #666;
@@ -121,12 +151,14 @@
     justify-content: center;
     gap: 5px;
 }
+
 .separator>div {
     width: 100px;
     height: 3px;
     border-radius: 5px;
     background: #666;
 }
+
 .separator>span {
     color: #323232;
     font-family: var(--font-SpaceMono);
@@ -148,13 +180,15 @@
     box-shadow: 4px 4px #202020;
     font-size: 16px;
     font-weight: 600;
-    color: var(--font-color, #323232); /* Usa var para color, con un valor por defecto */
+    color: var(--font-color, #323232);
+    /* Usa var para color, con un valor por defecto */
     cursor: pointer;
     transition: all 250ms;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
+
 .oauthButton::before {
     content: "";
     position: absolute;
@@ -167,9 +201,11 @@
     box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
     transition: all 250ms;
 }
+
 .oauthButton:hover {
     color: #e8e8e8;
 }
+
 .oauthButton:hover::before {
     width: 100%;
 }
@@ -184,7 +220,7 @@
     box-shadow: 4px 4px #202020;
     font-size: 15px;
     font-weight: 600;
-    color: #323232;
+
     padding: 5px 10px;
     outline: none;
 }

@@ -1,127 +1,91 @@
 import "./Login.css";
-
-// Importamos los hooks de React que se utilizan para manejar funciones y efectos secundarios
-import { useCallback, useEffect } from "react";
-
-// Importamos el hook personalizado que maneja el estado de autenticación
+import React, { useCallback, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../../../Stores/use-auth-store";
-
-// Importamos el DAO de usuarios que permite interactuar con la base de datos de usuarios
 import UserDAO from "../../DAO/UserDaAO";
+import Header from "../../Pages/Header/Header";
 
-// Importamos el hook para la navegación entre rutas en React
-import { useNavigate } from "react-router-dom";
-
-// Importamos el componente de encabezado
-import Header from "../header/Header";
-
-// Importamos React para la definición de componentes funcionales
-import React from "react";
-
-// Definimos el componente funcional Login, que será exportado para ser usado en otras partes de la aplicación
 export default function Login() {
-    // Usamos el hook useAuthStore para obtener el estado del usuario y las funciones relacionadas con la autenticación
-    const { user, loginGoogleWithPopUp, observeAuthState, logout } = useAuthStore();
-
-    // Usamos useNavigate para obtener una función que permite navegar a diferentes rutas
+    const { user, loginGoogleWithPopUp, observeAuthState, logout, quiz } = useAuthStore();
     const navigate = useNavigate();
 
-    // Obtenemos el estado del quiz, si existe, desde el store de autenticación
-    const { quiz } = useAuthStore();
-    console.log(quiz); // Registramos el estado del quiz en la consola para propósitos de depuración
+    // Maneja el inicio de sesión con Google
+    const handleLogin = useCallback(() => loginGoogleWithPopUp(), [loginGoogleWithPopUp]);
 
-    // Definimos la función handleLogin que maneja el inicio de sesión con Google mediante un popup
-    const handleLogin = useCallback(() => {
-        loginGoogleWithPopUp(); // Llamamos la función que abre el popup de inicio de sesión con Google
-    }, [loginGoogleWithPopUp]); // Utilizamos useCallback para optimizar el rendimiento, evitando recrear la función innecesariamente
+    // Maneja el cierre de sesión
+    const handleLogout = useCallback(() => logout(), [logout]);
 
-    // Definimos la función handleLogout que maneja el cierre de sesión del usuario
-    const handleLogout = useCallback(() => {
-        logout(); // Llamamos la función que cierra la sesión del usuario
-    }, [logout]); // Utilizamos useCallback para optimizar el rendimiento
-
-    // Hook de efecto que se ejecuta cada vez que el componente se monta o cambia el estado de user
+    // Observa el estado de autenticación al montar el componente
     useEffect(() => {
-        observeAuthState(); // Observamos el estado de autenticación y actualizamos si hay algún cambio en el usuario
-        console.log(user); // Registramos el estado actual del usuario en la consola para propósitos de depuración
-    }, [observeAuthState, user]); // Dependencias: ejecutamos el efecto cuando observeAuthState o user cambian
+        observeAuthState();
+    }, [observeAuthState]);
 
-    // Hook de efecto que se ejecuta cuando el usuario está autenticado
+    // Crea un nuevo usuario y navega si el usuario está autenticado
     useEffect(() => {
-        if (user) { // Si hay un usuario autenticado
-            const newUser = {
-                email: user.email, // Guardamos el correo del usuario
-                name: user.displayName, // Guardamos el nombre del usuario
-                photo: user.photoURL, // Guardamos la URL de la foto de perfil del usuario
-            };
-            UserDAO.createUser(newUser); // Creamos un nuevo usuario en la base de datos con estos datos
-            navigate("/login"); // Navegamos a la página de login
+        if (user) {
+            UserDAO.createUser({
+                email: user.email,
+                name: user.displayName,
+                photo: user.photoURL,
+            });
+            navigate("/login");
         }
-    }, [user, navigate]); // Dependencias: el efecto se ejecutará cuando user o navigate cambien
+    }, [user, navigate]);
 
-    // Retornamos el JSX que define la interfaz de usuario del componente
+    // Renderiza el componente
     return (
-        <>
-            {/* Mostramos el componente de encabezado */}
-            <div> {/* Contenedor principal con clase CSS */}
+        <div>
+            {user ? (
+                <>
+                    <Header />
+                    <div>
+                        <h1 className="welcome-message">¡Bienvenido {user.displayName}!</h1>
+                        <div className="content-container">
+                            {/* Columna izquierda: Contenido del texto */}
+                            <div className="intro-box">
+                                <p className="intro-text">
+                                    Aprenderás sobre la importancia de cuidar el medio ambiente mientras recolectas monedas y evitas desperdicios.
+                                </p>
+                                <p className="intro-text">
+                                    Para iniciar la partida, presiona el botón y prepárate para conocer más a fondo los problemas naturales de nuestra Tierra.
+                                </p>
+                            </div>
 
-                {user ? ( // Si hay un usuario autenticado
-                    <>
-                        <div>
-                            <Header />
-                            <p className="welcome-text"> {/* Texto de bienvenida */}
-                                ¡ Bienvenido {user.displayName} ! {/* Muestra el nombre del usuario */}
-                            </p>
-                            <p className="present-text"> {/* Texto de presentación */}
-                                Hola {user.displayName}, si deseas cerrar sesión, por favor ve a tu perfil y en el menu desplegable oreciona
-                                cerrar sesion 
-                            </p>
-
-
-
-
-                        </div>
-                    </>
-                ) : ( // Si no hay un usuario autenticado
-                    <div className="form"> {/* Contenedor del formulario */}
-                        <p>Bienvenidos {/* Texto de bienvenida */}
-                            <span>iniciar sesión para continuar</span> {/* Texto adicional */}
-                        </p>
-                        <button className="oauthButton" onClick={handleLogin}> {/* Botón para iniciar sesión con Google */}
-                            <svg className="icon" viewBox="0 0 24 24"> {/* Ícono de Google */}
-                                <path
-                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                                    fill="#4285F4"
-                                />
-                                <path
-                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                                    fill="#34A853"
-                                />
-                                <path
-                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                                    fill="#FBBC05"
-                                />
-                                <path
-                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                                    fill="#EA4335"
-                                />
-                            </svg>
-                            continuar con Google {/* Texto del botón */}
-                        </button>
-
-                        <div className="separator"> {/* Separador entre opciones */}
-                            <div /> {/* Línea separadora */}
-                            <span>OR</span> {/* Texto "OR" */}
-                            <div /> {/* Línea separadora */}
+                            {/* Columna derecha: Contenedor del modelo 3D */}
+                            <div className="model-view">
+                                {/* Botón encima del texto */}
+                                <li className="start-button">
+                                    <span className="start-icon">♻️</span>
+                                    <Link to="/introduction" className="start-button-title">Iniciar</Link>
+                                </li>
+                                <p>Espacio para modelo 3D</p>
+                            </div>
                         </div>
 
-                        <input type="email" placeholder="Email" name="email" /> {/* Campo de texto para el email */}
-                        <button className="oauthButton"> {/* Botón para continuar */}
-                            Continue
-                        </button>
+
                     </div>
-                )}
-            </div>
-        </>
+                </>
+            ) : (
+                <div className="form">
+                    <p>Bienvenidos <span>iniciar sesión para continuar</span></p>
+                    <button className="oauthButton" onClick={handleLogin}>
+                        <svg className="icon" viewBox="0 0 24 24">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+                        </svg>
+                        continuar con Google
+                    </button>
+                    <div className="separator">
+                        <div />
+                        <span>OR</span>
+                        <div />
+                    </div>
+                    <input type="email" placeholder="Email" name="email" />
+                    <button className="oauthButton">Continue</button>
+                </div>
+            )}
+        </div>
     );
-}   
+}

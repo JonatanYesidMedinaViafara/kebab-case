@@ -29,6 +29,9 @@ const Header = () => {
                 <Link to="/deforestation">Deforestación</Link>
               </div>
             </li>
+            <li>
+              <Link to="/Quiz">Quiz</Link>
+            </li>
           </ul>
           <ul className="nav-right">
             <li className="dropdown">

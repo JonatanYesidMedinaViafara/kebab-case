@@ -1,4 +1,4 @@
-import Header from "../header/Header";
+import Header from "../../Pages/Header/Header";
 import "./Page404.css";
 
 const Page404 = () => {

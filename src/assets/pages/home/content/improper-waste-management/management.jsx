@@ -1,52 +1,58 @@
-import { OrbitControls, Sky } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
-import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
-import Header from "../../../header/Header";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Header from "../../../Header/Header";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Sky } from "@react-three/drei";
 import "./css/management.css";
 import City3d from "./models/City3d";
-import Person from "./models/person3d";
 import Citytext from "./models/title-city";
+import Person from "./models/HumanA3d";
 
 const Management = () => {
+    const navigate = useNavigate();
+    const [isExpanding, setIsExpanding] = useState(false);
+
+    const handleRedirect = () => {
+        setIsExpanding(true); // Inicia la animación
+
+        // Espera a que la animación termine antes de redirigir
+        setTimeout(() => {
+            navigate("/Typesm"); // Redirige a la nueva página
+        }, 1280); // Ajusta el tiempo para que coincida con la duración de la animación
+    };
+
     return (
         <>
             <Header />
 
-            <div className="title-text">
-                Manejo inadecuado de residuos
-            </div>
+            <div className="title-text">Manejo inadecuado de residuos</div>
 
             <div className="home-erosion">
-                <h1 className="tituloPrincipal">El manejo de residuos se refiere a la recolección, transporte, procesamiento y disposición de los desechos generados por actividades humanas. Cuando no se maneja adecuadamente, puede generar graves problemas ambientales, como contaminación del suelo, agua y aire, contribuyendo al cambio climático y afectando la salud humana.</h1>
+                <h1 className="tituloPrincipal">
+                    El manejo de residuos se refiere a la recolección, transporte, procesamiento y disposición de los desechos generados por actividades humanas. Cuando no se maneja adecuadamente, puede generar graves problemas ambientales, como contaminación del suelo, agua y aire, contribuyendo al cambio climático y afectando la salud humana.
+                </h1>
             </div>
 
             <div className="ciudadcita">
                 <Canvas
-                    shadows // Activa el renderizado de sombras en el Canvas
+                    shadows
                     camera={{
-                        position: [5, 15, 50], // Posición de la cámara
-                        fov: 30,               // Campo de visión de la cámara
+                        position: [5, 15, 50],
+                        fov: 30,
                     }}
-
-                    style={
-                        {
-                            height: 1000,
-                            width: 1500,
-                            right: 270
-                        }
-                    }
+                    style={{
+                        height: 1000,
+                        width: 1500,
+                        right: 270,
+                    }}
                 >
-                    {/* Controles para rotar y mover el modelo 3D */}
                     <OrbitControls />
-
-                    {/* Luz ambiental para iluminar el modelo de manera uniforme */}
                     <ambientLight intensity={0.4} />
-
-                    {/* Luz direccional fija con sombras activadas */}
                     <directionalLight
-                        position={[15, 20, 10]}       // Posición fija de la luz
-                        intensity={1.2}               // Intensidad de la luz
-                        castShadow                    // Activa las sombras
-                        shadow-mapSize-width={1024}   // Mayor resolución para sombras
+                        position={[15, 20, 10]}
+                        intensity={1.2}
+                        castShadow
+                        shadow-mapSize-width={1024}
                         shadow-mapSize-height={1024}
                         shadow-camera-far={50}
                         shadow-camera-left={-20}
@@ -54,28 +60,30 @@ const Management = () => {
                         shadow-camera-top={20}
                         shadow-camera-bottom={-20}
                     />
-
                     <Sky
-                        sunPosition={[0, -1, -1]} // Coloca el sol debajo del horizonte
-                        inclination={0.2} // Ajusta la inclinación para simular el atardecer
-                        azimuth={180} // Ajusta el ángulo de azimut para cambiar la dirección de la luz
-                        mieCoefficient={0.005} // Ajusta la dispersión atmosférica
-                        elevation={85} // Ajusta la elevación del sol
-                        mieDirectionalG={0.07} // Ajusta el brillo del sol
-                        rayleigh={3} // Ajusta la dispersión de Rayleigh
-                        turbidity={15} // Ajusta la claridad del cielo
-                        exposure={0.8} // Ajusta la exposición del cielo
+                        sunPosition={[0, -1, -1]}
+                        inclination={0.2}
+                        azimuth={180}
+                        mieCoefficient={0.005}
+                        elevation={85}
+                        mieDirectionalG={0.07}
+                        rayleigh={3}
+                        turbidity={15}
+                        exposure={0.8}
                         distance={50}
                     />
-
-                    {/* Renderiza el modelo de la ciudad con sombras activadas */}
-                    <City3d castShadow receiveShadow /> {/* Activa sombras en el modelo */}
+                    <City3d castShadow receiveShadow />
                     <Citytext />
                     <Person />
-
                 </Canvas>
+            </div>
 
-
+            {/* Botón de redirección con animación */}
+            <div
+                className={`redirect-circle ${isExpanding ? "expanding" : ""}`}
+                onClick={handleRedirect}
+            >
+                →
             </div>
         </>
     );

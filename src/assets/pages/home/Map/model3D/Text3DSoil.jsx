@@ -10,7 +10,7 @@ const Text3DSoil = () => {
                 center
                 distanceFactor={100}
                 transform
-                position={[0, 0, 5]}
+                position={[0, 10, 5]}
                 style={
                     {
                         color: "black",

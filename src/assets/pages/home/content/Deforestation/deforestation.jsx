@@ -4,7 +4,8 @@ import "./deforestation.css";
 import AnimationCanvas from './illustrations_3D/illustration_3D_1.jsx';
 import SolutionsScene from "./illustrations_3D/illustration_3D_4.jsx";
 import DeforestationScene from './illustrations_3D/ilustration_3D_2.jsx';
-
+import ForestScene from './illustrations_3D/ilustration_3D_3.jsx';
+import { OrbitControls} from '@react-three/drei';
 
 import causa_1 from './image/causa_1.jpg';
 import causa_2 from './image/causa_2.jpg';
@@ -30,6 +31,8 @@ import solucion_2 from './image/solucion_2.jpg';
 import solucion_3 from './image/solucion_3.jpg';
 import solucion_4 from './image/solucion_4.jpg';
 import solucion_5 from './image/solucion_5.jpg';
+import { Physics } from '@react-three/rapier';
+import { Canvas } from "@react-three/fiber";
 
 const Deforestation = () => {
   return (
@@ -108,7 +111,20 @@ const Deforestation = () => {
         <h2 className="deforestation_sub_title">2. Consecuencias</h2>
         <div className="animation-container" style={{ height: '400px' }}>
           {/* Animación 3D de introducción */}
-       
+          <Canvas 
+        camera={{ position: [0, 20, 20], fov: 60 }}
+        style={{
+          background: "linear-gradient(to top, #87CEEB, #FFFFFF)",
+        }}shadows>
+            <fog attach="fog" args={['#A9A9A9', 50, 150]} />
+              <ambientLight intensity={0.5} />
+                <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
+                  <OrbitControls enableDamping={true} dampingFactor={0.1} />
+                    <Physics>
+                      <ForestScene />
+                    </Physics>
+          </Canvas>
+
         </div>
         <ul className="section-points">
           <h3> Pérdida de biodiversidad</h3>

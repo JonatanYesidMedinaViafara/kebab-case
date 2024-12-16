@@ -10,6 +10,8 @@ export function Person(props) {
   // Estado para la posición del modelo y el salto
   const [position, setPosition] = useState([-3, 0.4, 6]);
   const [isJumping, setIsJumping] = useState(false);
+  console.log(gltf); // Inspecciona todo el objeto cargado
+  console.log(gltf.animations); // Muestra las animaciones disponibles
 
   // Función para manejar eventos de teclado y mover el modelo
   const handleKeyDown = (event) => {

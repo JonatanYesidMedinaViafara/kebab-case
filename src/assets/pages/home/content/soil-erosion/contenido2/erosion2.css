@@ -1,0 +1,6 @@
+
+.section:hover {
+    transform: scale(1.02); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    transition: transform 0.3s ease-in-out; /* Duración de la animación */
+}
+
